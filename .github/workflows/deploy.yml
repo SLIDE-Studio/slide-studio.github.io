@@ -32,13 +32,16 @@ jobs:
           version: 9
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build
         run: pnpm build
 
       - name: Ensure .nojekyll exists
         run: touch ./out/.nojekyll
+
+      - name: List output for debugging
+        run: ls -la ./out/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
