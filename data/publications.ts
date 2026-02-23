@@ -1,5 +1,7 @@
 export type Publication = {
-  /** Paper title (wrap in escaped quotes if needed) */
+  /** Reference tag, e.g. "[C13]", "[J2]" */
+  tag?: string
+  /** Paper title */
   title: string
   /** Comma-separated author list, e.g. "Last, F., Last, F." */
   authors: string
@@ -11,6 +13,8 @@ export type Publication = {
   link?: string
   /** Optional award, e.g. "Best Paper", "Honorable Mention" */
   award?: string
+  /** Optional ranking note, e.g. "CORE rank A*", "ERA rank B" */
+  rank?: string
 }
 
 /**
@@ -21,52 +25,41 @@ export type Publication = {
  *  below and fill in the fields:
  *
  *  {
+ *    tag: "[C14]",                                   // optional
  *    title: "Your Paper Title",
  *    authors: "Last, F., Last, F., Last, F.",
- *    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+ *    venue: "Full Conference / Journal Name",
  *    year: "2026",
- *    link: "https://doi.org/10.1145/xxxxx",  // optional
- *    award: "Best Paper",                     // optional
+ *    link: "https://doi.org/10.1145/xxxxx",          // optional
+ *    award: "Best Paper",                             // optional
+ *    rank: "CORE rank A*",                            // optional
  *  },
  * ───────────────────────────────────────────────
  */
 
 export const publications: Publication[] = [
   {
-    title:
-      '"Nothing About Us Without Us": Co-Designing Voice Assistants with Deaf and Hard-of-Hearing Users',
-    authors: "Osei, A., Sharma, P., Tanaka, J.",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
-    year: "2026",
-  },
-  {
-    title:
-      "Feeling Present: How Embodied Avatars Mediate Social Connection in Collaborative Mixed Reality",
-    authors: "Gutierrez, L., Tanaka, J., Osei, A.",
-    venue:
-      "ACM CSCW Conference on Computer-Supported Cooperative Work",
+    tag: "[C13]",
+    title: "Project LOCOMO: Lower Consumption, More Optimization",
+    authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
+    venue: "OzCHI 2025: Generative Intelligences, Planetary Futures. 37th Australian Conference on Human-Computer Interaction (HCI). Sydney, Australia",
     year: "2025",
+    rank: "ERA rank B",
   },
   {
-    title:
-      "Community-Driven Algorithm Auditing: A Participatory Framework for Equitable AI",
-    authors: "Al-Rashid, F., Osei, A.",
-    venue:
-      "ACM FAccT Conference on Fairness, Accountability, and Transparency",
+    tag: "[C12]",
+    title: "Project LOCOMO AR: Augmented Reality with Carbon Metrics for Sustainable AI Use",
+    authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
+    venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct). IEEE",
     year: "2025",
+    rank: "CORE rank A*",
   },
   {
-    title:
-      "Touch to Learn: Multi-Sensory Toolkits for Neurodiverse Learners in STEM Education",
-    authors: "Okonkwo, S., Sharma, P., Osei, A.",
-    venue: "ACM IDC Conference on Interaction Design and Children",
+    tag: "[C11]",
+    title: "Towards Designing User Interfaces for Optimized Human AI Communication and Supervisory Control in Software Engineering",
+    authors: "Nam, S., Chan, C.",
+    venue: "32nd IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing. IEEE",
     year: "2025",
-  },
-  {
-    title:
-      "Aging With Agency: Privacy-Preserving Care Networks for Older Adults Living Independently",
-    authors: "Tanaka, J., Gutierrez, L.",
-    venue: "ACM Conference on Designing Interactive Systems (DIS)",
-    year: "2024",
+    rank: "CORE rank C",
   },
 ]

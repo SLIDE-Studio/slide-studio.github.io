@@ -13,6 +13,10 @@ export type Project = {
   tags: string[]
   /** Optional external link (paper, demo, repo) */
   link?: string
+  /** Optional image path (.jpg, .gif) in public/images/projects/ */
+  image?: string
+  /** Optional YouTube embed URL, e.g. "https://www.youtube.com/embed/VIDEO_ID" */
+  video?: string
 }
 
 /**
@@ -29,7 +33,8 @@ export type Project = {
  *    year: "2026",
  *    description: "A short description of the project.",
  *    tags: ["Tag1", "Tag2", "Tag3"],
- *    link: "https://example.com",  // optional
+ *    link: "https://example.com",              // optional
+ *    image: "/images/projects/my-project.jpg", // optional
  *  },
  * ───────────────────────────────────────────────
  */
@@ -37,47 +42,47 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "01",
-    title: "Accessible Voice Interfaces",
-    category: "Inclusive Design",
+    title: "Virtual Conversational Companion for People Living with Dementia in AR",
+    category: "Health & Wellbeing",
     year: "2026",
     description:
-      "Co-designing voice-based interaction systems with d/Deaf and hard-of-hearing communities to bridge conversational AI accessibility gaps.",
-    tags: ["Accessibility", "Voice UI", "Participatory Design"],
+      "Designing an augmented reality conversational companion that supports meaningful social interaction for people living with dementia, exploring empathetic dialogue, memory-aware prompts, and caregiver integration.",
+    tags: ["Augmented Reality", "Dementia Care", "Conversational AI", "Inclusive Design"],
   },
   {
     id: "02",
-    title: "Social Presence in Mixed Reality",
-    category: "Social Computing",
-    year: "2025",
+    title: "Digital Twin Platform for Sustainable Architecture",
+    category: "Sustainable Design",
+    year: "2026",
     description:
-      "Investigating how embodied avatars and spatial cues shape feelings of social connection in collaborative mixed-reality environments.",
-    tags: ["XR", "CSCW", "Embodiment"],
+      "Designing a digital twin platform that enables architects and urban planners to simulate, visualize, and optimize building sustainability through real-time environmental data and interactive 3D models.",
+    tags: ["Digital Twin", "Sustainability", "Architecture", "Data Visualization"],
   },
   {
     id: "03",
-    title: "Equitable Algorithm Auditing",
-    category: "Fairness & Ethics",
+    title: "Sustainable AI Interface for Extended Reality",
+    category: "Sustainable HCI",
     year: "2025",
     description:
-      "Building community-driven tools that enable non-experts to audit algorithmic decision-making systems for bias and equity.",
-    tags: ["AI Ethics", "Civic Tech", "Transparency"],
+      "Investigating how AI-driven interfaces in extended reality environments can be designed to minimize energy consumption and computational overhead while maintaining rich, accessible user experiences.",
+    tags: ["XR", "Sustainable AI", "Green HCI", "Interaction Design"],
   },
   {
     id: "04",
-    title: "Tangible Learning for Neurodiverse Youth",
-    category: "Interaction Design",
+    title: "Accessible Text Display in Extended Reality",
+    category: "Accessibility",
     year: "2025",
     description:
-      "Designing physical-digital toolkits that support diverse learning styles through tactile, multi-sensory interaction paradigms.",
-    tags: ["Education", "Neurodiversity", "Tangible UI"],
+      "Designing and evaluating text rendering techniques in extended reality that improve readability and comprehension for users with low vision, dyslexia, and other reading-related needs.",
+    tags: ["XR", "Accessibility", "Typography", "Low Vision"],
   },
   {
     id: "05",
-    title: "Care Networks & Aging in Place",
-    category: "Health & Wellbeing",
-    year: "2024",
+    title: "Tangible Interfaces for Accessible Interaction",
+    category: "Accessibility",
+    year: "2025",
     description:
-      "Exploring how connected technologies can strengthen informal care networks while respecting autonomy and privacy for older adults.",
-    tags: ["Aging", "IoT", "Privacy"],
+      "Exploring how physical, graspable interfaces can make digital systems more accessible, designing tangible interaction paradigms that support users with diverse motor, cognitive, and sensory abilities.",
+    tags: ["Tangible UI", "Accessibility", "Inclusive Design", "Physical Computing"],
   },
 ]

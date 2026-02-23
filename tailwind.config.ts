@@ -51,6 +51,8 @@ const config: Config = {
         'slide-blue': 'hsl(var(--slide-blue))',
         'slide-blue-light': 'hsl(var(--slide-blue-light))',
         'slide-cream': 'hsl(var(--slide-cream))',
+        'slide-green': 'hsl(var(--slide-green))',
+        'slide-green-light': 'hsl(var(--slide-green-light))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

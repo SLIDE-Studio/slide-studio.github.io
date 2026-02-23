@@ -2,22 +2,25 @@ import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { Research } from "@/components/research"
 import { Team } from "@/components/team"
-import { Publications } from "@/components/publications"
+import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { ParallaxShapes } from "@/components/parallax-shapes"
+import { IntroLoader } from "@/components/intro-loader"
 
 export default function Page() {
   return (
-    <>
+    <IntroLoader>
+      <ParallaxShapes />
       <Nav />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <Research />
         <Team />
-        <Publications />
+        <Works />
         <Contact />
       </main>
       <Footer />
-    </>
+    </IntroLoader>
   )
 }

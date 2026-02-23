@@ -1,5 +1,10 @@
 import { ArrowUpRight } from "lucide-react"
 
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/SLIDE-Studio/" },
+  { label: "Scholar", href: "https://scholar.google.com/citations?user=NE2tiHsAAAAJ&hl=ko&oi=ao" },
+]
+
 export function Contact() {
   return (
     <section id="contact" className="px-6 py-24 lg:px-12">
@@ -24,10 +29,10 @@ export function Contact() {
               Email
             </span>
             <a
-              href="mailto:hello@slide-studio.org"
+              href="mailto:slidelab@algomau.ca"
               className="group flex items-center gap-2 text-lg font-bold transition-colors hover:text-primary"
             >
-              hello@slide-studio.org
+              slidelab@algomau.ca
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
@@ -37,30 +42,24 @@ export function Contact() {
               Location
             </span>
             <p className="text-lg font-bold">
-              HCI Building, Room 302
+              Algoma University, Canada
             </p>
             <p className="text-sm text-muted-foreground">
-              School of Information & Design
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-1">
-            <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-              Office Hours
-            </span>
-            <p className="text-lg font-bold">
-              Mon - Fri, 10:00 - 17:00
+              School of Computer Science and IT
             </p>
           </div>
 
           <div className="flex gap-6 pt-4">
-            {["Twitter", "GitHub", "Scholar"].map((platform) => (
+            {socialLinks.map((link) => (
               <a
-                key={platform}
-                href="#"
-                className="font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-1 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
               >
-                {platform}
+                {link.label}
+                <ArrowUpRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             ))}
           </div>
