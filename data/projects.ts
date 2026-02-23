@@ -48,9 +48,6 @@ export const projects: Project[] = [
     description:
       "Designing an augmented reality conversational companion that supports meaningful social interaction for people living with dementia, exploring empathetic dialogue, memory-aware prompts, and caregiver integration.",
     tags: ["Augmented Reality", "Dementia Care", "Conversational AI", "Inclusive Design"],
-    // link: "https://example.com",              // optional
-    // image: "/images/projects/my-project.jpg", // optional
- 
   },
   {
     id: "02",
@@ -60,8 +57,6 @@ export const projects: Project[] = [
     description:
       "Designing a digital twin platform that enables architects and urban planners to simulate, visualize, and optimize building sustainability through real-time environmental data and interactive 3D models.",
     tags: ["Digital Twin", "Sustainability", "Architecture", "Data Visualization"],
-    // link: "https://example.com",              // optional
-    // image: "/images/projects/my-project.jpg", // optional
   },
   {
     id: "03",
@@ -71,8 +66,6 @@ export const projects: Project[] = [
     description:
       "Investigating how AI-driven interfaces in extended reality environments can be designed to minimize energy consumption and computational overhead while maintaining rich, accessible user experiences.",
     tags: ["XR", "Sustainable AI", "Green HCI", "Interaction Design"],
-    // link: "https://example.com",              // optional
-    // image: "/images/twinhaus1.png", // optional
   },
   {
     id: "04",
@@ -82,8 +75,6 @@ export const projects: Project[] = [
     description:
       "Designing and evaluating text rendering techniques in extended reality that improve readability and comprehension for users with low vision, dyslexia, and other reading-related needs.",
     tags: ["XR", "Accessibility", "Typography", "Low Vision"],
-    // link: "https://example.com",              // optional
-    // image: "/images/projects/my-project.jpg", // optional
   },
   {
     id: "05",
@@ -93,7 +84,5 @@ export const projects: Project[] = [
     description:
       "Exploring how physical, graspable interfaces can make digital systems more accessible, designing tangible interaction paradigms that support users with diverse motor, cognitive, and sensory abilities.",
     tags: ["Tangible UI", "Accessibility", "Inclusive Design", "Physical Computing"],
-    // link: "https://example.com",              // optional
-    // image: "/images/tangiblekey3.png", // optional
   },
 ]
