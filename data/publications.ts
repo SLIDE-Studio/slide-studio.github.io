@@ -38,15 +38,14 @@ export type Publication = {
  */
 
 export const publications: Publication[] = [
-  {
-    tag: "[C14]",
-    title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
-    authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
-    venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
-    year: "2026",
-    rank: "Accepted. ERA rank B (acceptance rate 27%)",
-  },
-
+  // {
+  //   tag: "[C14]",
+  //   title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
+  //   authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
+  //   venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
+  //   year: "2026",
+  //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate 27%)",
+  // },
   {
     tag: "[C13]",
     title: "Project LOCOMO: Lower Consumption, More Optimization",
