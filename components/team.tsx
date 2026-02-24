@@ -37,24 +37,28 @@ const members: TeamMember[] = [
     role: "Assistant Professor in Computer Science",
     focus: "Creative Director",
     initials: "SN",
+    image: "/images/team/sn1.jpg"
   },
   {
     name: "Joel Varghese",
     role: "Master of Computer Science",
     focus: "Computer Science",
     initials: "JV",
+    image: "/images/team/jv.jpeg"
   },
   {
     name: "Muhammad Minhajuddin",
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "MM",
+    image: "/images/team/mm.jpeg"
   },
   {
     name: "Harris Adedeji",
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "HA",
+    image: "/images/team/ha.jpeg"
   },
   {
     name: "Presley Kinley",
