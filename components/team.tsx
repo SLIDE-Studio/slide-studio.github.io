@@ -37,21 +37,25 @@ const members: TeamMember[] = [
     role: "Assistant Professor in Computer Science",
     focus: "Creative Director",
     initials: "SN",
-    image: "/images/team/sn1.jpg"
+    image: "/images/team/sn1.jpg",
+    linkedin: "https://www.linkedin.com/in/somang/"
+
   },
   {
     name: "Joel Varghese",
     role: "Master of Computer Science",
     focus: "Computer Science",
     initials: "JV",
-    image: "/images/team/jv.jpeg"
+    image: "/images/team/jv.jpeg",
+    linkedin: "https://www.linkedin.com/in/joel662/"
   },
   {
     name: "Muhammad Minhajuddin",
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "MM",
-    image: "/images/team/mm.jpeg"
+    image: "/images/team/mm.jpeg",
+    linkedin: "https://www.linkedin.com/in/muhammad-minhajuddin76/"
   },
   {
     name: "Harris Adedeji",
