@@ -1,4 +1,4 @@
-import { Users, GraduationCap, Linkedin, ExternalLink } from "lucide-react"
+import { Users, GraduationCap, ExternalLink } from "lucide-react"
 
 interface TeamMember {
   name: string
@@ -39,7 +39,6 @@ const members: TeamMember[] = [
     initials: "SN",
     image: "/images/team/sn1.jpg",
     linkedin: "https://www.linkedin.com/in/somang/"
-
   },
   {
     name: "Joel Varghese",
