@@ -1,3 +1,4 @@
+"use client"
 import { Users, GraduationCap, ExternalLink } from "lucide-react"
 
 interface TeamMember {
