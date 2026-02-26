@@ -69,7 +69,7 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "PK",
-    // linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
+    linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
   },
 ]
 
@@ -79,6 +79,7 @@ const alumni: Alumnus[] = [
     role: "Undergraduate",
     now: "BMO",
     initials: "AG",
+    linkedin: "https://www.linkedin.com/in/aanyagoel/"
   },
 ]
 
