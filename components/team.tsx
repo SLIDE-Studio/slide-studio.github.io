@@ -69,8 +69,7 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "PK",
-    linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
-    
+    // linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
   },
 ]
 
