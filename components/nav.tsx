@@ -17,7 +17,7 @@ export function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
       <nav className="flex items-center justify-between px-6 py-3 lg:px-12">
-        <a href="#" className="flex items-center">
+        <a href="/" className="flex items-center">
           <SlideLogo size="sm" showSubtitle />
         </a>
 
