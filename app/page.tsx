@@ -12,15 +12,17 @@ export default function Page() {
   return (
     <IntroLoader>
       <ParallaxShapes />
-      <Nav />
-      <main className="relative z-10 mx-auto max-w-6xl px-6 lg:px-12">
-        <Hero />
-        <Research />
-        <Team />
-        <Works />
-        <Contact />
-      </main>
-      <Footer />
+      <div className="relative z-10 mx-auto max-w-6xl border-x border-border">
+        <Nav />
+        <main className="px-6 lg:px-12">
+          <Hero />
+          <Research />
+          <Team />
+          <Works />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </IntroLoader>
   )
 }

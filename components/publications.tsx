@@ -3,7 +3,7 @@ import { publications } from "@/data/publications"
 
 export function Works() {
   return (
-    <section id="works" className="relative bg-card py-24">
+    <section id="works" className="relative bg-card px-6 py-24 lg:px-12">
       <div className="mb-16">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-primary">
           Output
