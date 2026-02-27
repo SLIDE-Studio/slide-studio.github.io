@@ -13,7 +13,7 @@ export default function Page() {
     <IntroLoader>
       <ParallaxShapes />
       <Nav />
-      <main className="relative z-10">
+      <main className="relative z-10 mx-auto max-w-6xl px-6 lg:px-12">
         <Hero />
         <Research />
         <Team />

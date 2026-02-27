@@ -7,7 +7,7 @@ const socialLinks = [
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 py-24 lg:px-12">
+    <section id="contact" className="py-24">
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
         <div>
           <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-primary">

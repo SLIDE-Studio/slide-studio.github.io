@@ -4,7 +4,7 @@ import { SlideLogo } from "@/components/slide-logo"
 export function Hero() {
   return (
     <section
-      className="relative z-10 flex min-h-screen flex-col justify-center px-6 pt-24 lg:px-12"
+      className="relative z-10 flex min-h-screen flex-col justify-center pt-24"
     >
       <div className="flex flex-col items-start gap-6">
         <SlideLogo size="xl" />

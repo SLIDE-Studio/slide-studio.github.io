@@ -192,7 +192,7 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
 
 export function Team() {
   return (
-    <section id="team" className="px-6 py-24 lg:px-12">
+    <section id="team" className="py-24">
       <div className="mb-16">
         <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-primary">
           People

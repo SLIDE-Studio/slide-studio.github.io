@@ -16,7 +16,7 @@ export function Nav() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm">
-      <nav className="flex items-center justify-between px-6 py-3 lg:px-12">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3 lg:px-12">
         <a href="/" className="flex items-center">
           <SlideLogo size="sm" showSubtitle />
         </a>
@@ -45,7 +45,7 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background px-6 py-6 md:hidden">
+        <div className="mx-auto max-w-6xl border-t border-border bg-background px-6 py-6 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map((l) => (
               <li key={l.href}>
