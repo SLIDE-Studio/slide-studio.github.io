@@ -75,6 +75,14 @@ const members: TeamMember[] = [
 
 const alumni: Alumnus[] = [
   {
+    name: "Hritika Sharma",
+    role: "Undergraduate",
+    now: "",
+    initials: "HS",
+    linkedin: "https://www.linkedin.com/in/hritikasharma2002/",
+    memo: "hrsharma@algomau.ca"
+  },
+  {
     name: "Aanya Goel",
     role: "Undergraduate",
     now: "BMO",
