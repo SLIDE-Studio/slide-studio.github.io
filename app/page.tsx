@@ -5,13 +5,13 @@ import { Team } from "@/components/team"
 import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
-import { ParallaxShapes } from "@/components/parallax-shapes"
+import { FluidBackground } from "@/components/fluid-background"
 import { IntroLoader } from "@/components/intro-loader"
 
 export default function Page() {
   return (
     <IntroLoader>
-      <ParallaxShapes />
+      <FluidBackground />
       <div className="relative z-10 mx-auto max-w-6xl border-x border-border">
         <Nav />
         <main className="px-6 lg:px-12">
