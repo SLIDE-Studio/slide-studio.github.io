@@ -8,19 +8,20 @@ interface Blob {
   baseX: number
   baseY: number
   radius: number
+  baseRadius: number
   color: string
-  vx: number
-  vy: number
   phase: number
   phaseSpeed: number
+  pinch: number // 0 = normal, 1 = fully pinched
+  pinchTarget: number
 }
 
 const COLORS = [
-  "rgba(27, 158, 111, 0.12)",   // green
-  "rgba(56, 165, 224, 0.10)",   // blue
-  "rgba(234, 180, 34, 0.10)",   // yellow
-  "rgba(228, 122, 159, 0.08)",  // pink
-  "rgba(232, 130, 58, 0.10)",   // orange
+  "rgba(27, 158, 111, 0.15)",   // green
+  "rgba(56, 165, 224, 0.12)",   // blue
+  "rgba(234, 180, 34, 0.12)",   // yellow
+  "rgba(228, 122, 159, 0.10)",  // pink
+  "rgba(232, 130, 58, 0.12)",   // orange
 ]
 
 export function FluidBackground() {
@@ -48,22 +49,24 @@ export function FluidBackground() {
 
     const initBlobs = () => {
       const blobs: Blob[] = []
-      const numBlobs = 8
+      const numBlobs = 12
 
       for (let i = 0; i < numBlobs; i++) {
         const x = Math.random() * window.innerWidth
-        const y = Math.random() * window.innerHeight * 2
+        const y = Math.random() * window.innerHeight * 3
+        const radius = 40 + Math.random() * 80
         blobs.push({
           x,
           y,
           baseX: x,
           baseY: y,
-          radius: 150 + Math.random() * 250,
+          radius,
+          baseRadius: radius,
           color: COLORS[i % COLORS.length],
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
           phase: Math.random() * Math.PI * 2,
-          phaseSpeed: 0.005 + Math.random() * 0.01,
+          phaseSpeed: 0.008 + Math.random() * 0.015,
+          pinch: 0,
+          pinchTarget: 0,
         })
       }
       blobsRef.current = blobs
@@ -72,34 +75,46 @@ export function FluidBackground() {
     const drawBlob = (blob: Blob, time: number) => {
       if (!ctx) return
 
+      const scrollOffset = scrollRef.current * 0.3
+      const screenY = blob.y - scrollOffset
+
+      // Skip drawing if blob is far off screen
+      if (screenY < -blob.radius * 2 || screenY > window.innerHeight + blob.radius * 2) {
+        return
+      }
+
       ctx.beginPath()
       
-      const points = 8
+      const points = 6
       const angleStep = (Math.PI * 2) / points
       
-      for (let i = 0; i <= points; i++) {
+      // Pinch effect - contracts the blob toward center
+      const pinchFactor = 1 - blob.pinch * 0.6
+      const currentRadius = blob.radius * pinchFactor
+      
+      const pathPoints: { x: number; y: number }[] = []
+      
+      for (let i = 0; i < points; i++) {
         const angle = i * angleStep
-        const wobble = Math.sin(time * 0.001 + blob.phase + angle * 3) * 20
-        const r = blob.radius + wobble
+        const wobble = Math.sin(time * 0.002 + blob.phase + angle * 2) * (8 * pinchFactor)
+        const r = currentRadius + wobble
         const px = blob.x + Math.cos(angle) * r
-        const py = blob.y + Math.sin(angle) * r - scrollRef.current * 0.3
-        
-        if (i === 0) {
-          ctx.moveTo(px, py)
-        } else {
-          const prevAngle = (i - 1) * angleStep
-          const prevWobble = Math.sin(time * 0.001 + blob.phase + prevAngle * 3) * 20
-          const prevR = blob.radius + prevWobble
-          const prevX = blob.x + Math.cos(prevAngle) * prevR
-          const prevY = blob.y + Math.sin(prevAngle) * prevR - scrollRef.current * 0.3
-          
-          const cpX1 = prevX + Math.cos(prevAngle + Math.PI / 2) * (blob.radius * 0.5)
-          const cpY1 = prevY + Math.sin(prevAngle + Math.PI / 2) * (blob.radius * 0.5) - scrollRef.current * 0.3
-          const cpX2 = px - Math.cos(angle + Math.PI / 2) * (blob.radius * 0.5)
-          const cpY2 = py - Math.sin(angle + Math.PI / 2) * (blob.radius * 0.5)
-          
-          ctx.bezierCurveTo(cpX1, cpY1, cpX2, cpY2, px, py)
-        }
+        const py = screenY + Math.sin(angle) * r
+        pathPoints.push({ x: px, y: py })
+      }
+      
+      // Draw smooth blob using quadratic curves through midpoints
+      ctx.moveTo(
+        (pathPoints[0].x + pathPoints[points - 1].x) / 2,
+        (pathPoints[0].y + pathPoints[points - 1].y) / 2
+      )
+      
+      for (let i = 0; i < points; i++) {
+        const curr = pathPoints[i]
+        const next = pathPoints[(i + 1) % points]
+        const midX = (curr.x + next.x) / 2
+        const midY = (curr.y + next.y) / 2
+        ctx.quadraticCurveTo(curr.x, curr.y, midX, midY)
       }
       
       ctx.closePath()
@@ -116,8 +131,19 @@ export function FluidBackground() {
       blobsRef.current.forEach((blob) => {
         // Organic movement
         blob.phase += blob.phaseSpeed
-        blob.x = blob.baseX + Math.sin(time * 0.0003 + blob.phase) * 50
-        blob.y = blob.baseY + Math.cos(time * 0.0002 + blob.phase) * 30
+        blob.x = blob.baseX + Math.sin(time * 0.0004 + blob.phase) * 30
+        blob.y = blob.baseY + Math.cos(time * 0.0003 + blob.phase) * 20
+        
+        // Animate pinch - smoothly interpolate toward target
+        blob.pinch += (blob.pinchTarget - blob.pinch) * 0.15
+        
+        // Auto-release pinch
+        if (blob.pinchTarget > 0) {
+          blob.pinchTarget *= 0.92
+          if (blob.pinchTarget < 0.01) {
+            blob.pinchTarget = 0
+          }
+        }
         
         drawBlob(blob, time)
       })
@@ -129,16 +155,36 @@ export function FluidBackground() {
       scrollRef.current = window.scrollY
     }
 
+    const onClick = (e: MouseEvent) => {
+      const clickX = e.clientX
+      const clickY = e.clientY + scrollRef.current * 0.3
+
+      blobsRef.current.forEach((blob) => {
+        const dx = blob.x - clickX
+        const dy = blob.y - clickY
+        const distance = Math.sqrt(dx * dx + dy * dy)
+        
+        // Pinch blobs within range - closer blobs pinch more
+        const maxRange = 200
+        if (distance < maxRange) {
+          const intensity = 1 - (distance / maxRange)
+          blob.pinchTarget = Math.max(blob.pinchTarget, intensity)
+        }
+      })
+    }
+
     resize()
     initBlobs()
     animate(0)
 
     window.addEventListener("resize", resize)
     window.addEventListener("scroll", onScroll, { passive: true })
+    window.addEventListener("click", onClick)
 
     return () => {
       window.removeEventListener("resize", resize)
       window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("click", onClick)
       cancelAnimationFrame(animationRef.current)
     }
   }, [])
@@ -146,7 +192,7 @@ export function FluidBackground() {
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none fixed inset-0 z-0"
+      className="fixed inset-0 z-0"
       aria-hidden="true"
     />
   )
