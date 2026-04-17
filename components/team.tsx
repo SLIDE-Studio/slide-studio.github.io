@@ -93,24 +93,24 @@ const alumni: Alumnus[] = [
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group [perspective:800px]" style={{ minHeight: 220 }}>
-      <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+    <div className="group [perspective:800px]" style={{ minHeight: 240 }}>
+      <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
-        <div className="absolute inset-0 flex flex-col gap-4 rounded-lg border border-border bg-card p-6 [backface-visibility:hidden]">
+        <div className="absolute inset-0 flex flex-col gap-4 rounded-md border border-border bg-card p-6 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
           {member.image ? (
             <img
               src={member.image}
               alt={`Portrait of ${member.name}`}
-              className="h-16 w-16 rounded-full border-2 border-primary/20 object-cover"
+              className="h-16 w-16 rounded-full border-2 border-muted object-cover"
             />
           ) : (
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
               {member.initials}
             </div>
           )}
           <div>
             <h3 className="text-lg font-bold tracking-tight">{member.name}</h3>
-            <p className="mt-0.5 font-mono text-xs uppercase tracking-wider text-primary">
+            <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-primary">
               {member.role}
             </p>
           </div>
@@ -120,13 +120,13 @@ function MemberCard({ member }: { member: TeamMember }) {
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 flex flex-col justify-between rounded-lg border border-border bg-card p-6 text-left [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 flex flex-col justify-between rounded-md border border-border bg-card p-6 text-left shadow-md [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <div>
             <h3 className="text-base font-bold text-foreground">{member.name}</h3>
             <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
               {member.role}
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {member.memo || member.focus}
             </p>
           </div>
@@ -135,7 +135,7 @@ function MemberCard({ member }: { member: TeamMember }) {
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-primary transition-colors hover:text-primary/80"
+              className="mt-4 inline-flex items-center gap-2 font-mono text-xs text-primary transition-colors duration-150 hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring"
               onClick={(e) => e.stopPropagation()}
             >
               <Linkedin className="h-4 w-4" />
@@ -152,14 +152,14 @@ function MemberCard({ member }: { member: TeamMember }) {
 function AlumnusCard({ alum }: { alum: Alumnus }) {
   return (
     <div className="group [perspective:800px]" style={{ minHeight: 100 }}>
-      <div className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+      <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
-        <div className="absolute inset-0 flex items-center gap-4 rounded-lg border border-border bg-card/60 p-4 [backface-visibility:hidden]">
+        <div className="absolute inset-0 flex items-center gap-4 rounded-md border border-border bg-card/80 p-4 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
           {alum.image ? (
             <img
               src={alum.image}
               alt={`Portrait of ${alum.name}`}
-              className="h-10 w-10 shrink-0 rounded-full border border-border object-cover"
+              className="h-10 w-10 shrink-0 rounded-full border border-muted object-cover"
             />
           ) : (
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold text-muted-foreground">
@@ -168,15 +168,15 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
           )}
           <div className="min-w-0">
             <p className="truncate text-sm font-bold leading-snug">{alum.name}</p>
-            <p className="truncate font-mono text-[10px] uppercase tracking-wider text-primary/70">{alum.role}</p>
+            <p className="truncate font-mono text-[10px] uppercase tracking-wider text-primary/80">{alum.role}</p>
             {alum.now && <p className="truncate text-xs text-muted-foreground">{alum.now}</p>}
           </div>
         </div>
 
         {/* Back */}
-        <div className="absolute inset-0 flex flex-col justify-center rounded-lg border border-border bg-card p-4 text-left [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 flex flex-col justify-center rounded-md border border-border bg-card p-4 text-left shadow-md [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <p className="text-sm font-bold text-foreground">{alum.name}</p>
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
             {alum.memo || (alum.now ? `Now at ${alum.now}` : alum.role)}
           </p>
           {alum.linkedin && (
@@ -184,7 +184,7 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
               href={alum.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex items-center gap-2 font-mono text-[10px] text-primary transition-colors hover:text-primary/80"
+              className="mt-3 inline-flex items-center gap-2 font-mono text-[10px] text-primary transition-colors duration-150 hover:text-primary/80 focus-visible:ring-2 focus-visible:ring-ring"
               onClick={(e) => e.stopPropagation()}
             >
               <Linkedin className="h-3 w-3" />
@@ -230,11 +230,13 @@ export function Team() {
       </div>
 
       {/* Join CTA */}
-      <div className="mt-16 flex items-center gap-6 rounded-lg border border-dashed border-primary/40 bg-slide-blue-light p-8">
-        <Users className="hidden h-8 w-8 shrink-0 text-primary sm:block" />
+      <div className="mt-16 flex items-start gap-6 rounded-md border border-primary/20 bg-muted/50 p-6 sm:items-center sm:p-8">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary/10">
+          <Users className="h-6 w-6 text-primary" />
+        </div>
         <div>
           <h3 className="text-lg font-bold text-foreground">Join SLIDE Studio</h3>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             {"We're always looking for curious, compassionate researchers. If you're interested in HCI, inclusive design, or social computing, reach out."}
           </p>
         </div>

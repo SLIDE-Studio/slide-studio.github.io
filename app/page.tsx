@@ -12,9 +12,9 @@ export default function Page() {
   return (
     <IntroLoader>
       <FluidBackground />
-      <div className="relative z-10 mx-auto max-w-6xl border-x border-border">
+      <div className="relative z-10 mx-auto max-w-5xl border-x border-border">
         <Nav />
-        <main className="px-6 lg:px-12">
+        <main className="flex flex-col gap-8 px-6 lg:px-10">
           <Hero />
           <Research />
           <Team />

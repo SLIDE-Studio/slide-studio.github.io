@@ -21,12 +21,12 @@ export function Nav() {
           <SlideLogo size="sm" showSubtitle />
         </a>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                className="inline-block rounded-md px-4 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
               >
                 {l.label}
               </a>
@@ -45,13 +45,13 @@ export function Nav() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background px-6 py-6 md:hidden">
-          <ul className="flex flex-col gap-4">
+        <div className="border-t border-border bg-background px-6 py-4 md:hidden">
+          <ul className="flex flex-col gap-1">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-mono text-sm uppercase tracking-widest text-muted-foreground transition-colors hover:text-primary"
+                  className="block rounded-md px-3 py-3 font-mono text-sm uppercase tracking-wider text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground active:bg-muted"
                   onClick={() => setOpen(false)}
                 >
                   {l.label}
