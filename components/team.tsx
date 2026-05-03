@@ -72,18 +72,18 @@ const members: TeamMember[] = [
     image: "/images/team/rr.jpg",
     linkedin: "https://www.linkedin.com/in/rachit2002/"
   },
-]
-
-const alumni: Alumnus[] = [
   {
     name: "Joel Varghese",
     role: "Master of Computer Science",
-    now: "",
+    // now: "",
     initials: "JV",
     image: "/images/team/jv.jpeg",
     linkedin: "https://www.linkedin.com/in/joel662/",
-    memo: "Research Affiliate"
+    memo: "Research Affiliate. Graduated in Spring, 2026"
   },
+]
+
+const alumni: Alumnus[] = [
   {
     name: "Presley Kinley",
     role: "Undergraduate",
