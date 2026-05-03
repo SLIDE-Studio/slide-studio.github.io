@@ -3,6 +3,7 @@ import { ArrowUpRight, Mail, MapPin } from "lucide-react"
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/SLIDE-Studio/" },
   { label: "Scholar", href: "https://scholar.google.com/citations?user=NE2tiHsAAAAJ&hl=ko&oi=ao" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/slideresearch"}, 
 ]
 
 export function Contact() {
