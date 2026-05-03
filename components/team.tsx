@@ -69,7 +69,7 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "RR",
-    image: "/images/team/rr.jpeg",
+    image: "/images/team/rr.jpg",
     linkedin: "https://www.linkedin.com/in/rachit2002/"
   },
 ]
