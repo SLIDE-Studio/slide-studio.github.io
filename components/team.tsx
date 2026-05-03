@@ -42,14 +42,6 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/somang/"
   },
   {
-    name: "Joel Varghese",
-    role: "Master of Computer Science",
-    focus: "Computer Science",
-    initials: "JV",
-    image: "/images/team/jv.jpeg",
-    linkedin: "https://www.linkedin.com/in/joel662/"
-  },
-  {
     name: "Muhammad Minhajuddin",
     role: "Undergraduate",
     focus: "Computer Science",
@@ -62,18 +54,43 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "HA",
-    image: "/images/team/ha.jpeg"
+    image: "/images/team/ha.jpeg",
+    linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
   },
-  {
-    name: "Presley Kinley",
+    {
+    name: "Tarang Rana",
     role: "Undergraduate",
     focus: "Computer Science",
-    initials: "PK",
-    linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
+    initials: "TR",
+    image: "/images/team/tr.jpeg",
+    linkedin: "https://www.linkedin.com/in/rana-tarang/"
+  },  {
+    name: "Rachit Ranabhat",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "RR",
+    image: "/images/team/rr.jpeg",
+    linkedin: "https://www.linkedin.com/in/rachit2002/"
   },
 ]
 
 const alumni: Alumnus[] = [
+  {
+    name: "Joel Varghese",
+    role: "Master of Computer Science",
+    now: "",
+    initials: "JV",
+    image: "/images/team/jv.jpeg",
+    linkedin: "https://www.linkedin.com/in/joel662/",
+    memo: "Research Affiliate"
+  },
+  {
+    name: "Presley Kinley",
+    role: "Undergraduate",
+    now: "",
+    initials: "PK",
+    linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
+  },
   {
     name: "Hritika Sharma",
     role: "Undergraduate",
