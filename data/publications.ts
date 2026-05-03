@@ -39,7 +39,7 @@ export type Publication = {
 
 export const publications: Publication[] = [
   // {
-  //   tag: "[C14]",
+  //   tag: "[C6]",
   //   title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
   //   authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
   //   venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
@@ -47,7 +47,23 @@ export const publications: Publication[] = [
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate 27%)",
   // },
   {
-    tag: "[C13]",
+    tag: "[C5]",
+    title: "TwinHaus: Digital Twin Design Tool for Sustainable Building Construction",
+    authors: "Nam, S., Varghese, J., Goel, A., Jung, H.",
+    venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+    year: "2026",
+    rank: "CORE RANK A*",
+  },
+  {
+    tag: "[C4]",
+    title: "LOCOMO-Play: Gamification of Sustainable Artificial Intelligence Use in Augmented Reality",
+    authors: "Nam, S., Jung, H., Moon, Y., Uhm, S.",
+    venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+    year: "2026",
+    rank: "CORE RANK A*",
+  },
+  {
+    tag: "[C3]",
     title: "Project LOCOMO: Lower Consumption, More Optimization",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "OzCHI 2025: Generative Intelligences, Planetary Futures. 37th Australian Conference on Human-Computer Interaction (HCI). Sydney, Australia",
@@ -55,7 +71,7 @@ export const publications: Publication[] = [
     rank: "ERA rank B",
   },
   {
-    tag: "[C12]",
+    tag: "[C2]",
     title: "Project LOCOMO AR: Augmented Reality with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct). IEEE",
@@ -63,7 +79,7 @@ export const publications: Publication[] = [
     rank: "CORE rank A*",
   },
   {
-    tag: "[C11]",
+    tag: "[C1]",
     title: "Towards Designing User Interfaces for Optimized Human AI Communication and Supervisory Control in Software Engineering",
     authors: "Nam, S., Chan, C.",
     venue: "32nd IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing. IEEE",
