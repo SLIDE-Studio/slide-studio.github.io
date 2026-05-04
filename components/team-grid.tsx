@@ -122,7 +122,7 @@ export function TeamGrid() {
             className="flex flex-col"
           >
             {/* Circular image */}
-            <div className="relative h-20 w-20 overflow-hidden rounded-full bg-secondary shrink-0">
+            <div className="relative h-28 w-28 overflow-hidden rounded-full bg-secondary shrink-0">
               {member.image ? (
                 <img
                   src={member.image}
