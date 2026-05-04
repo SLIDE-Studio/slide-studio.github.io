@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
 }
 
 @layer utilities {
@@ -14,60 +14,60 @@ body {
 
 @layer base {
   :root {
-    /* Tinted neutrals - warm cream undertone for approachability */
-    --background: 48 40% 97%;
-    --foreground: 220 25% 10%;
-    --card: 48 30% 99%;
-    --card-foreground: 220 25% 10%;
-    --popover: 48 30% 99%;
-    --popover-foreground: 220 25% 10%;
+    /* Clean white background */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
     
-    /* Primary: Deep indigo-blue with warmth */
-    --primary: 230 65% 50%;
-    --primary-foreground: 48 40% 98%;
+    /* Primary: Pure black for strong typography */
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 48 30% 94%;
-    --secondary-foreground: 220 25% 10%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
     
-    /* Muted with tint - never pure gray */
-    --muted: 48 20% 92%;
-    --muted-foreground: 220 15% 38%;
+    /* Muted grays */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
     
-    --accent: 165 50% 42%;
-    --accent-foreground: 48 40% 98%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 8%;
     
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
     
-    /* Border with subtle warmth */
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 230 65% 50%;
+    /* Clean borders */
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 8%;
     
-    /* Chart colors - harmonious, accessible */
-    --chart-1: 230 65% 50%;
-    --chart-2: 165 50% 42%;
-    --chart-3: 35 85% 52%;
-    --chart-4: 195 70% 45%;
-    --chart-5: 340 55% 58%;
+    /* Chart colors */
+    --chart-1: 0 0% 20%;
+    --chart-2: 0 0% 40%;
+    --chart-3: 0 0% 60%;
+    --chart-4: 0 0% 80%;
+    --chart-5: 0 0% 95%;
     
-    --radius: 0.5rem;
+    --radius: 0;
     
-    --sidebar-background: 48 30% 99%;
-    --sidebar-foreground: 220 25% 10%;
-    --sidebar-primary: 230 65% 50%;
-    --sidebar-primary-foreground: 48 40% 98%;
-    --sidebar-accent: 48 20% 92%;
-    --sidebar-accent-foreground: 220 25% 10%;
-    --sidebar-border: 220 15% 88%;
-    --sidebar-ring: 230 65% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 8%;
+    --sidebar-primary: 0 0% 8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 8%;
 
-    /* Brand colors - refined */
-    --slide-blue: 230 65% 50%;
-    --slide-blue-light: 230 60% 96%;
-    --slide-cream: 48 40% 97%;
-    --slide-green: 165 50% 38%;
-    --slide-green-light: 165 45% 95%;
+    /* Brand colors - monochrome */
+    --slide-blue: 0 0% 8%;
+    --slide-blue-light: 0 0% 96%;
+    --slide-cream: 0 0% 100%;
+    --slide-green: 0 0% 30%;
+    --slide-green-light: 0 0% 96%;
   }
 }
 
