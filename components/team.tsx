@@ -88,7 +88,7 @@ const members: TeamMember[] = [
     initials: "JV",
     image: "/images/team/jv.jpeg",
     linkedin: "https://www.linkedin.com/in/joel662/",
-    memo: "Research Affiliate. Graduated in Spring, 2026"
+    memo: "Research Affiliate.\nGraduated in Spring, 2026"
   },
 ]
 
@@ -119,30 +119,37 @@ const alumni: Alumnus[] = [
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group [perspective:800px]" style={{ minHeight: 240 }}>
+    <div className="group [perspective:800px]" style={{ minHeight: 180 }}>
       <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
-        <div className="absolute inset-0 flex flex-col gap-4 rounded-md border border-border bg-card p-6 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
-          {member.image ? (
-            <img
-              src={member.image}
-              alt={`Portrait of ${member.name}`}
-              className="h-20 w-20 rounded-full border-2 border-muted object-cover"
-            />
-          ) : (
-            <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
-              {member.initials}
-            </div>
-          )}
-          <div>
-            <h3 className="text-lg font-bold tracking-tight">{member.name}</h3>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-wider text-primary">
-              {member.role}
+        <div className="absolute inset-0 flex flex-row gap-5 rounded-md border border-border bg-card p-5 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
+          {/* Left: profile picture + name */}
+          <div className="flex shrink-0 flex-col items-center gap-2">
+            {member.image ? (
+              <img
+                src={member.image}
+                alt={`Portrait of ${member.name}`}
+                className="h-24 w-24 rounded-full border-2 border-muted object-cover object-top"
+              />
+            ) : (
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                {member.initials}
+              </div>
+            )}
+            <p className="w-24 text-center text-xs font-bold leading-tight tracking-tight text-foreground">
+              {member.name}
             </p>
           </div>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {member.focus}
-          </p>
+
+          {/* Right: role + focus */}
+          <div className="flex min-w-0 flex-col justify-center gap-2">
+            <p className="font-mono text-[10px] uppercase tracking-wider text-primary">
+              {member.role}
+            </p>
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {member.focus}
+            </p>
+          </div>
         </div>
 
         {/* Back */}
