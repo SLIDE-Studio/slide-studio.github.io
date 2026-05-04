@@ -114,20 +114,15 @@ export function TeamGrid() {
         Team
       </h2>
 
-      {/* Members Grid - asymmetric masonry style */}
-      <div className="columns-1 gap-8 sm:columns-2 xl:columns-3">
-        {members.map((member, idx) => (
-          <div 
-            key={member.name} 
-            className="mb-8 break-inside-avoid"
+      {/* Members Grid - uniform card layout */}
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {members.map((member) => (
+          <div
+            key={member.name}
+            className="flex flex-col overflow-hidden border border-border"
           >
-            {/* Image */}
-            <div 
-              className="relative w-full overflow-hidden bg-secondary"
-              style={{ 
-                aspectRatio: idx % 2 === 0 ? '3/4' : '1/1',
-              }}
-            >
+            {/* Square image */}
+            <div className="relative aspect-square w-full overflow-hidden bg-secondary">
               {member.image ? (
                 <img
                   src={member.image}
@@ -136,7 +131,7 @@ export function TeamGrid() {
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center">
-                  <span className="text-4xl font-bold text-muted-foreground/30">
+                  <span className="text-3xl font-bold text-muted-foreground/30">
                     {member.initials}
                   </span>
                 </div>
@@ -144,29 +139,36 @@ export function TeamGrid() {
             </div>
 
             {/* Info */}
-            <div className="mt-4">
-              <div className="flex items-start justify-between gap-2">
-                <h3 className="text-sm font-bold uppercase tracking-wide">
-                  {member.name}
-                </h3>
-                {member.linkedin && (
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 text-muted-foreground hover:text-foreground"
-                    aria-label={`${member.name}'s LinkedIn`}
-                  >
-                    <Linkedin className="h-4 w-4" />
-                  </a>
-                )}
+            <div className="flex flex-1 flex-col justify-between p-3">
+              <div>
+                <div className="flex items-start justify-between gap-1">
+                  <h3 className="text-xs font-bold uppercase leading-tight tracking-wide">
+                    {member.name}
+                  </h3>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="shrink-0 text-muted-foreground hover:text-foreground"
+                      aria-label={`${member.name}'s LinkedIn`}
+                    >
+                      <Linkedin className="h-3.5 w-3.5" />
+                    </a>
+                  )}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground leading-snug">
+                  {member.role}
+                </p>
+                <p className="text-xs text-muted-foreground/70">
+                  {member.focus}
+                </p>
               </div>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {member.role}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                {member.focus}
-              </p>
+              {member.memo && (
+                <p className="mt-2 text-xs italic text-muted-foreground/60">
+                  {member.memo}
+                </p>
+              )}
             </div>
           </div>
         ))}
