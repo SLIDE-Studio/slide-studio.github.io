@@ -88,7 +88,7 @@ const members: TeamMember[] = [
     initials: "JV",
     image: "/images/team/jv.jpeg",
     linkedin: "https://www.linkedin.com/in/joel662/",
-    memo: "Research Affiliate. Graduated in Spring, 2026"
+    memo: "Research Affiliate.\nGraduated in Spring, 2026"
   },
 ]
 
