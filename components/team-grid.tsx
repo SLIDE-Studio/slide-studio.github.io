@@ -119,10 +119,10 @@ export function TeamGrid() {
         {members.map((member) => (
           <div
             key={member.name}
-            className="flex flex-col overflow-hidden border border-border"
+            className="flex flex-col"
           >
-            {/* Square image */}
-            <div className="relative aspect-square w-full overflow-hidden bg-secondary">
+            {/* Circular image */}
+            <div className="relative h-20 w-20 overflow-hidden rounded-full bg-secondary shrink-0">
               {member.image ? (
                 <img
                   src={member.image}
@@ -131,7 +131,7 @@ export function TeamGrid() {
                 />
               ) : (
                 <div className="flex h-full w-full items-center justify-center">
-                  <span className="text-3xl font-bold text-muted-foreground/30">
+                  <span className="text-lg font-bold text-muted-foreground/30">
                     {member.initials}
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export function TeamGrid() {
             </div>
 
             {/* Info */}
-            <div className="flex flex-1 flex-col justify-between p-3">
+            <div className="flex flex-1 flex-col justify-between mt-2">
               <div>
                 <div className="flex items-start justify-between gap-1">
                   <h3 className="text-xs font-bold uppercase leading-tight tracking-wide">
