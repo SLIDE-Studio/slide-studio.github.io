@@ -64,13 +64,22 @@ const members: TeamMember[] = [
     initials: "TR",
     image: "/images/team/tr.jpeg",
     linkedin: "https://www.linkedin.com/in/rana-tarang/"
-  },  {
+  },  
+  {
     name: "Rachit Ranabhat",
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "RR",
     image: "/images/team/rr.jpg",
     linkedin: "https://www.linkedin.com/in/rachit2002/"
+  },
+  {
+    name: "Alessandra Pinto",
+    role: "Undergraduate",
+    focus: "Psychology",
+    initials: "AP",
+    image: "/images/team/ap.jpg",
+    linkedin: "https://www.linkedin.com/in/alessandra-pinto-52a366353/"
   },
   {
     name: "Joel Varghese",
