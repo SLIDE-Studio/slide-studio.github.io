@@ -129,10 +129,10 @@ function MemberCard({ member }: { member: TeamMember }) {
               <img
                 src={member.image}
                 alt={`Portrait of ${member.name}`}
-                className="h-24 w-24 rounded-md border-2 border-muted object-cover object-top"
+                className="h-24 w-24 rounded-full border-2 border-muted object-cover object-top"
               />
             ) : (
-              <div className="flex h-24 w-24 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground">
+              <div className="flex h-24 w-24 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
                 {member.initials}
               </div>
             )}
