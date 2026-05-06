@@ -16,7 +16,7 @@ export default function Page() {
       <div className="relative z-10 mx-auto max-w-5xl border-x border-border">
         <Nav />
         <main className="flex flex-col gap-8 px-6 lg:px-10">
-          <div className="flex flex-row items-start gap-6">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start">
             <div className="min-w-0 flex-1">
               <Hero />
             </div>
