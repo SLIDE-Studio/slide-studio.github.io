@@ -1,38 +1,11 @@
-"use client"
+import Link from "next/link"
+import { ArrowRight } from "lucide-react"
+import { newsItems } from "@/lib/news-data"
 
-import { useState } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
-
-// Add new items at the TOP of this array — they will automatically appear first.
-const newsItems = [
-  {
-    date: "2026.06",
-    text: "Dr. Nam received Algoma University Research Fund of $5,000 for 1 year.",
-  },
-  {
-    date: "2026.06",
-    text: "Joel Varghese received Algoma University Research Student Fund of $3,000.",
-  },
-  {
-    date: "2026.05",
-    text: "Joel Varghese and Dr. Nam authored a demo paper in IEEE VR.",
-  },
-  {
-    date: "2026.05",
-    text: "Dr. Nam co-authored a paper in CHI2026.",
-  },
-  {
-    date: "2026.04",
-    text: "Dr. Nam authored a paper in ACM TACCESS.",
-  },
-]
-
-const PREVIEW_COUNT = 3
+const PREVIEW_COUNT = 5
 
 export function News() {
-  const [expanded, setExpanded] = useState(false)
-
-  const visible = expanded ? newsItems : newsItems.slice(0, PREVIEW_COUNT)
+  const visible = newsItems.slice(0, PREVIEW_COUNT)
   const hasMore = newsItems.length > PREVIEW_COUNT
 
   return (
@@ -58,23 +31,13 @@ export function News() {
         </ol>
 
         {hasMore && (
-          <button
-            onClick={() => setExpanded((prev) => !prev)}
+          <Link
+            href="/news"
             className="mt-4 flex w-full items-center justify-center gap-1 border-t border-border pt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
-            aria-expanded={expanded}
           >
-            {expanded ? (
-              <>
-                <ChevronUp className="h-3 w-3" />
-                See less
-              </>
-            ) : (
-              <>
-                <ChevronDown className="h-3 w-3" />
-                See more
-              </>
-            )}
-          </button>
+            See more
+            <ArrowRight className="h-3 w-3" />
+          </Link>
         )}
       </div>
     </aside>
