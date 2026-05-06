@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
+import { News } from "@/components/news"
 import { Research } from "@/components/research"
 import { Team } from "@/components/team"
 import { Works } from "@/components/publications"
@@ -15,7 +16,12 @@ export default function Page() {
       <div className="relative z-10 mx-auto max-w-5xl border-x border-border">
         <Nav />
         <main className="flex flex-col gap-8 px-6 lg:px-10">
-          <Hero />
+          <div className="flex flex-row items-start gap-6">
+            <div className="min-w-0 flex-1">
+              <Hero />
+            </div>
+            <News />
+          </div>
           <Research />
           <Team />
           <Works />
