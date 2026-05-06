@@ -9,7 +9,7 @@ export function News() {
   const hasMore = newsItems.length > PREVIEW_COUNT
 
   return (
-    <aside className="w-64 shrink-0 pt-24">
+    <aside className="w-full shrink-0 pt-0 lg:w-64 lg:pt-24">
       <div className="sticky top-24 rounded-md border border-border bg-card p-5 shadow-sm">
         <h2 className="mb-4 font-mono text-[10px] uppercase tracking-wider text-primary">
           News
