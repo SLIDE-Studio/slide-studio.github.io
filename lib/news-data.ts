@@ -10,7 +10,7 @@ export const newsItems = [
   },
   {
     date: "2026.05",
-    text: "Joel Varghese and Dr. Nam authored a demo paper in IEEE VR.",
+    text: "Dr. Nam authored and Joel Varghese co-authored a demo paper in IEEE VR.",
   },
   {
     date: "2026.05",
@@ -19,5 +19,9 @@ export const newsItems = [
   {
     date: "2026.04",
     text: "Dr. Nam authored a paper in ACM TACCESS.",
+  },
+  {
+    date: "2025.10",
+    text: "Dr. Nam authored a demo paper in IEEE ISMAR.",
   },
 ]
