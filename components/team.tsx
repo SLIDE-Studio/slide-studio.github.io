@@ -96,7 +96,7 @@ const alumni: Alumnus[] = [
   {
     name: "Presley Kinley",
     role: "Undergraduate",
-    now: "",
+    now: "XR / Software Developer @ The CHANCE Centre",
     initials: "PK",
     linkedin: "https://www.linkedin.com/in/presley-k-303088266/"
   },
@@ -111,7 +111,7 @@ const alumni: Alumnus[] = [
   {
     name: "Aanya Goel",
     role: "Undergraduate",
-    now: "BMO",
+    now: "BI Developer @ BMO",
     initials: "AG",
     linkedin: "https://www.linkedin.com/in/aanyagoel/"
   },
