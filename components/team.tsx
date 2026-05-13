@@ -82,6 +82,14 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/alessandra-pinto-52a366353/"
   },
   {
+    name: "Niya Jose",
+    role: "Undergraduate",
+    focus: " Business Administration",
+    initials: "NJ",
+    image: "/images/team/nj.jpg",
+    linkedin: "https://www.linkedin.com/in/niya-jose/"
+  },
+  {
     name: "Joel Varghese",
     role: "Master of Computer Science",
     // now: "",
