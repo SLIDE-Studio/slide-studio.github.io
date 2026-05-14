@@ -86,7 +86,7 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: " Business Administration",
     initials: "NJ",
-    image: "/images/team/nj.jpg",
+    image: "/images/team/nj.jpeg",
     linkedin: "https://www.linkedin.com/in/niya-jose/"
   },
   {
