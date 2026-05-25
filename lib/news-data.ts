@@ -6,7 +6,8 @@
 export const newsItems: { date: string; text: string; link?: string }[] = [
   {
     date: "2026.05",
-    text: "Dr. Nam joined the <a href=\"https://www.southampton.ac.uk/research/institutes-centres/centre-for-sudden-death/our-people\">Centre for Sudden Death</a> as an external member.",
+    text: "Dr. Nam joined the Centre for Sudden Death at the U of Southampton, UK as an external member.",
+    link: "https://www.southampton.ac.uk/research/institutes-centres/centre-for-sudden-death/our-people",
   },
   {
     date: "2026.05",
