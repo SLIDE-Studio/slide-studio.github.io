@@ -1,8 +1,12 @@
 // Add new items at the TOP of this array — they will automatically appear first.
-export const newsItems = [
+// Each item supports:
+//   date: "YYYY.MM"
+//   text: news text (plain text or HTML with <a> tags)
+//   link?: optional external URL — renders as a "↗" icon link after the text
+export const newsItems: { date: string; text: string; link?: string }[] = [
   {
     date: "2026.05",
-    text: "Dr. Nam joined the Centre for Sudden Death at the University of Southampton as an external member.",
+    text: "Dr. Nam joined the <a href=\"https://www.southampton.ac.uk/research/institutes-centres/centre-for-sudden-death/our-people\">Centre for Sudden Death</a> as an external member.",
   },
   {
     date: "2026.05",
