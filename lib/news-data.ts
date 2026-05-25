@@ -20,17 +20,21 @@ export const newsItems: { date: string; text: string; link?: string }[] = [
   {
     date: "2026.05",
     text: "Dr. Nam co-authored a paper in CHI2026.",
+    link: "https://dl.acm.org/doi/full/10.1145/3772318.3790521",
   },
   {
     date: "2026.04",
     text: "Dr. Nam authored a paper in ACM TACCESS.",
+    link: "https://dl.acm.org/doi/abs/10.1145/3806043",
   },
   {
     date: "2026.03",
     text: "Dr. Nam authored and Joel Varghese co-authored a demo paper in IEEE VR.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11489900",
   },
   {
     date: "2025.10",
     text: "Dr. Nam authored a demo paper in IEEE ISMAR.",
+    link: "https://ieeexplore.ieee.org/abstract/document/11236378",
   },
 ]
