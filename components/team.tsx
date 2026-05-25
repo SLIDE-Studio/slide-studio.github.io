@@ -1,5 +1,5 @@
 "use client"
-import { useMemo } from "react"
+import { useState, useEffect } from "react"
 import { Users, GraduationCap, Linkedin, ExternalLink } from "lucide-react"
 
 interface TeamMember {
@@ -241,10 +241,12 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
 }
 
 export function Team() {
-  const shuffledMembers = useMemo(() => {
+  const [shuffledMembers, setShuffledMembers] = useState(members)
+
+  useEffect(() => {
     const [first, ...rest] = members
     const shuffled = [...rest].sort(() => Math.random() - 0.5)
-    return [first, ...shuffled]
+    setShuffledMembers([first, ...shuffled])
   }, [])
 
   return (
