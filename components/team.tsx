@@ -91,6 +91,13 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/niya-jose/"
   },
   {
+    name: "Masir Javed",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "MJ",
+    image: "/images/team/mj.jpg",
+  },
+  {
     name: "Joel Varghese",
     role: "Master of Computer Science",
     // now: "",
