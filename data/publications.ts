@@ -52,7 +52,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
-    rank: "CORE RANK A*",
+    rank: "Q2, Premier journal in accessible computing",
   },
   {
     tag: "[C6]",
