@@ -46,13 +46,13 @@ export const publications: Publication[] = [
   //   year: "2026",
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
   // },
-   {
+  {
     tag: "[J1]",
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
-    rank: "CORE RANK A*",
+    rank: "Premier journal in accessible computing",
   },
   {
     tag: "[C6]",
