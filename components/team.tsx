@@ -1,4 +1,5 @@
 "use client"
+import { useState, useEffect } from "react"
 import { Users, GraduationCap, Linkedin, ExternalLink } from "lucide-react"
 
 interface TeamMember {
@@ -88,6 +89,13 @@ const members: TeamMember[] = [
     initials: "NJ",
     image: "/images/team/nj.jpeg",
     linkedin: "https://www.linkedin.com/in/niya-jose/"
+  },
+  {
+    name: "Masir Javed",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "MJ",
+    image: "/images/team/mj.jpg",
   },
   {
     name: "Joel Varghese",
@@ -240,6 +248,14 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
 }
 
 export function Team() {
+  const [shuffledMembers, setShuffledMembers] = useState(members)
+
+  useEffect(() => {
+    const [first, ...rest] = members
+    const shuffled = [...rest].sort(() => Math.random() - 0.5)
+    setShuffledMembers([first, ...shuffled])
+  }, [])
+
   return (
     <section id="team" className="py-24">
       <div className="mb-16">
@@ -252,7 +268,7 @@ export function Team() {
       </div>
 
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
+        {shuffledMembers.map((member) => (
           <MemberCard key={member.name} member={member} />
         ))}
       </div>

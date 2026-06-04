@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, ExternalLink } from "lucide-react"
 import { newsItems } from "@/lib/news-data"
 
 const PREVIEW_COUNT = 5
@@ -20,9 +20,21 @@ export function News() {
               <span className="font-mono text-[10px] text-muted-foreground">
                 {item.date}
               </span>
-              <p className="text-xs leading-relaxed text-foreground">
-                {item.text}
-              </p>
+              <p
+                className="text-xs leading-relaxed text-foreground [&_a]:underline [&_a]:decoration-muted-foreground [&_a]:underline-offset-2 [&_a:hover]:text-primary [&_a:hover]:decoration-primary"
+                dangerouslySetInnerHTML={{ __html: item.text }}
+              />
+              {item.link && (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-mono text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                >
+                  <ExternalLink className="h-2.5 w-2.5" />
+                  Link
+                </a>
+              )}
               {i < visible.length - 1 && (
                 <div className="mt-2 border-b border-border" />
               )}

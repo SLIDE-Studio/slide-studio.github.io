@@ -1,3 +1,4 @@
+import { ExternalLink } from "lucide-react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { newsItems } from "@/lib/news-data"
@@ -25,7 +26,23 @@ export default function NewsPage() {
               <span className="w-20 shrink-0 font-mono text-xs text-muted-foreground">
                 {item.date}
               </span>
-              <p className="text-sm leading-relaxed text-foreground">{item.text}</p>
+              <div className="flex flex-col gap-1">
+                <p
+                  className="text-sm leading-relaxed text-foreground [&_a]:underline [&_a]:decoration-muted-foreground [&_a]:underline-offset-2 [&_a:hover]:text-primary [&_a:hover]:decoration-primary"
+                  dangerouslySetInnerHTML={{ __html: item.text }}
+                />
+                {item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 font-mono text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    Link
+                  </a>
+                )}
+              </div>
             </li>
           ))}
         </ol>
