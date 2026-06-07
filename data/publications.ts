@@ -39,7 +39,6 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
-    tag: "[D1]",
     title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
     authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
     venue: "Demo at the Graphics Interface Conference (GI 2026)",
@@ -47,7 +46,6 @@ export const publications: Publication[] = [
     rank: "CORE RANK B",    
   },
   // {
-  //   tag: "[C6]",
   //   title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
   //   authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
   //   venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
@@ -55,7 +53,6 @@ export const publications: Publication[] = [
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
   // },
   {
-    tag: "[J1]",
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
@@ -63,7 +60,6 @@ export const publications: Publication[] = [
     rank: "Premier journal in accessible computing",
   },
   {
-    tag: "[C6]",
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences’ Acceptance of Culturally Sensitive Content",
     authors: "Yoo, S., Nam, S., Chignell, M., & Truong, K.",
     venue: "ACM CHI Conference on Human Factors in Computing Systems",
@@ -71,7 +67,6 @@ export const publications: Publication[] = [
     rank: "CORE RANK A*",
   },
   {
-    tag: "[C5]",
     title: "TwinHaus: Digital Twin Design Tool for Sustainable Building Construction",
     authors: "Nam, S., Varghese, J., Goel, A., Jung, H.",
     venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
@@ -79,7 +74,6 @@ export const publications: Publication[] = [
     rank: "CORE RANK A*",
   },
   {
-    tag: "[C4]",
     title: "LOCOMO-Play: Gamification of Sustainable Artificial Intelligence Use in Augmented Reality",
     authors: "Nam, S., Jung, H., Moon, Y., Uhm, S.",
     venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
@@ -87,7 +81,6 @@ export const publications: Publication[] = [
     rank: "CORE RANK A*",
   },
   {
-    tag: "[C3]",
     title: "Project LOCOMO: Lower Consumption, More Optimization",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "OzCHI 2025: Generative Intelligences, Planetary Futures. 37th Australian Conference on Human-Computer Interaction (HCI). Sydney, Australia",
@@ -95,7 +88,6 @@ export const publications: Publication[] = [
     rank: "ERA rank B",
   },
   {
-    tag: "[C2]",
     title: "Project LOCOMO AR: Augmented Reality with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct). IEEE",
@@ -103,7 +95,6 @@ export const publications: Publication[] = [
     rank: "CORE rank A*",
   },
   {
-    tag: "[C1]",
     title: "Towards Designing User Interfaces for Optimized Human AI Communication and Supervisory Control in Software Engineering",
     authors: "Nam, S., Chan, C.",
     venue: "32nd IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing. IEEE",
