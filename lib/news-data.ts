@@ -13,6 +13,11 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   },
   {
     date: "2026.05",
+    text: "Dr. Nam co-authored a paper for PDC2026.",
+    link: "https://dl.acm.org/doi/abs/10.1145/3796624.3796648",
+  },
+  {
+    date: "2026.05",
     text: "Dr. Nam joined the Centre for Sudden Death at the U of Southampton, UK as an external member.",
     link: "https://www.southampton.ac.uk/research/institutes-centres/centre-for-sudden-death/our-people",
   },
