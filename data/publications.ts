@@ -70,7 +70,7 @@ export const publications: Publication[] = [
   },
   {
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences’ Acceptance of Culturally Sensitive Content",
-    authors: "Yoo, S., Nam, S., Chignell, M., & Truong, K.",
+    authors: "Yoo, S., Nam, S., Chignell, M., Truong, K.",
     venue: "ACM CHI Conference on Human Factors in Computing Systems",
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3772318.3790521",
