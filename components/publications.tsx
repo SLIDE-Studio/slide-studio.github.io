@@ -1,7 +1,13 @@
-import { ArrowUpRight } from "lucide-react"
+import Link from "next/link"
+import { ArrowUpRight, ArrowRight } from "lucide-react"
 import { publications } from "@/data/publications"
 
-export function Works() {
+const PREVIEW_COUNT = 5
+
+export function Works({ preview = false }: { preview?: boolean }) {
+  const visible = preview ? publications.slice(0, PREVIEW_COUNT) : publications
+  const hasMore = preview && publications.length > PREVIEW_COUNT
+
   return (
     <section id="works" className="relative rounded-md border border-border bg-card px-6 py-20 lg:px-10">
       <div className="mb-14">
@@ -14,7 +20,7 @@ export function Works() {
       </div>
 
       <div className="flex flex-col">
-        {publications.map((pub, idx) => (
+        {visible.map((pub, idx) => (
           <div
             key={idx}
             className="group flex flex-col gap-3 border-t border-border py-6 transition-colors duration-200 last:border-b hover:bg-muted/30 lg:flex-row lg:items-start lg:gap-8 lg:py-7"
@@ -61,6 +67,16 @@ export function Works() {
           </div>
         ))}
       </div>
+
+      {hasMore && (
+        <Link
+          href="/works"
+          className="mt-8 flex w-full items-center justify-center gap-1 border-t border-border pt-6 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
+        >
+          See more
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      )}
     </section>
   )
 }
