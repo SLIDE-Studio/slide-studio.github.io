@@ -43,6 +43,7 @@ export const publications: Publication[] = [
     authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
     venue: "Demo at the Graphics Interface Conference (GI 2026)",
     year: "2026",
+    link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     rank: "CORE RANK B",    
   },
   // {
@@ -53,12 +54,12 @@ export const publications: Publication[] = [
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
   // },
   {
-    title: "Dreaming with MAKOTO: Co-Designing an" Older Adult" Voice Assistant Intervention for Implicit Ageism. In Proceedings of the 19th Participatory Design Conference 2026, Vol. 1: Full Papers (pp. 416-430).",
+    title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
     authors: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., Kojima, M.",
-    venue: "ACM Transactions on Accessible Computing",
+    venue: "Participatory Design Conference",
     year: "2026",
-    link: "https://dl.acm.org/doi/10.1145/3806043",
-    rank: "Premier journal in accessible computing",
+    link: "https://dl.acm.org/doi/abs/10.1145/3796624.3796648",
+    rank: "CORE RANK B",
   },
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
@@ -69,7 +70,7 @@ export const publications: Publication[] = [
     rank: "Premier journal in accessible computing",
   },
   {
-    title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences’ Acceptance of Culturally Sensitive Content",
+    title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences Acceptance of Culturally Sensitive Content",
     authors: "Yoo, S., Nam, S., Chignell, M., Truong, K.",
     venue: "ACM CHI Conference on Human Factors in Computing Systems",
     year: "2026",
