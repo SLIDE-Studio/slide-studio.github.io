@@ -53,7 +53,7 @@ export const publications: Publication[] = [
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
   // },
   {
-    title: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., & Kojima, M. (2026, June). Dreaming with MAKOTO: Co-Designing an" Older Adult" Voice Assistant Intervention for Implicit Ageism. In Proceedings of the 19th Participatory Design Conference 2026, Vol. 1: Full Papers (pp. 416-430).",
+    title: "Dreaming with MAKOTO: Co-Designing an" Older Adult" Voice Assistant Intervention for Implicit Ageism. In Proceedings of the 19th Participatory Design Conference 2026, Vol. 1: Full Papers (pp. 416-430).",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
