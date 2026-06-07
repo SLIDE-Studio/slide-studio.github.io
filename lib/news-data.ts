@@ -45,6 +45,11 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
     link: "https://ieeexplore.ieee.org/abstract/document/11489900",
   },
   {
+    date: "2026.03",
+    text: "Dr. Nam authored a demo paper in IEEE VR.",
+    link: "https://ieeexplore.ieee.org/document/11489879",
+  },
+  {
     date: "2025.10",
     text: "Dr. Nam authored a demo paper in IEEE ISMAR.",
     link: "https://ieeexplore.ieee.org/abstract/document/11236378",
