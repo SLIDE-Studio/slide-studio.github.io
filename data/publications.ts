@@ -38,6 +38,14 @@ export type Publication = {
  */
 
 export const publications: Publication[] = [
+  {
+    tag: "[D1]",
+    title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
+    authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
+    venue: "Demo at the Graphics Interface Conference (GI 2026)",
+    year: "2026",
+    link: "/papers/gi26-echolocation-game-demo.pdf",
+  },
   // {
   //   tag: "[C6]",
   //   title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
