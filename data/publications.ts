@@ -54,7 +54,7 @@ export const publications: Publication[] = [
   // },
   {
     title: "Dreaming with MAKOTO: Co-Designing an" Older Adult" Voice Assistant Intervention for Implicit Ageism. In Proceedings of the 19th Participatory Design Conference 2026, Vol. 1: Full Papers (pp. 416-430).",
-    authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
+    authors: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., Kojima, M.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3806043",
@@ -62,7 +62,7 @@ export const publications: Publication[] = [
   },
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
-    authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
+    authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3806043",
