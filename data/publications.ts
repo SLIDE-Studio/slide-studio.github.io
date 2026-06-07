@@ -44,7 +44,7 @@ export const publications: Publication[] = [
     authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
     venue: "Demo at the Graphics Interface Conference (GI 2026)",
     year: "2026",
-    link: "/papers/gi26-echolocation-game-demo.pdf",
+    rank: "CORE RANK B",    
   },
   // {
   //   tag: "[C6]",
