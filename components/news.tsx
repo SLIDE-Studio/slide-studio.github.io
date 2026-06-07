@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, ExternalLink } from "lucide-react"
+import { ArrowRight, ExternalLink, FileText } from "lucide-react"
 import { newsItems } from "@/lib/news-data"
 
 const PREVIEW_COUNT = 5
@@ -33,6 +33,17 @@ export function News() {
                 >
                   <ExternalLink className="h-2.5 w-2.5" />
                   Link
+                </a>
+              )}
+              {item.paper && (
+                <a
+                  href={item.paper}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1 font-mono text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                >
+                  <FileText className="h-2.5 w-2.5" />
+                  Paper
                 </a>
               )}
               {i < visible.length - 1 && (

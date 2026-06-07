@@ -2,8 +2,15 @@
 // Each item supports:
 //   date: "YYYY.MM"
 //   text: news text (plain text or HTML with <a> tags)
-//   link?: optional external URL — renders as a "↗" icon link after the text
-export const newsItems: { date: string; text: string; link?: string }[] = [
+//   link?: optional external URL — renders as a "Link" icon link after the text
+//   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
+export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
+  {
+    date: "2026.05",
+    text: "Masir Javed, Rachit Ranabhat, Tarang Rana, Harris Adedeji will present a demo at the 26' Graphics Interface conference.",
+    link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
+    paper: "/papers/gi26-echolocation-game-demo.pdf",
+  },
   {
     date: "2026.05",
     text: "Dr. Nam joined the Centre for Sudden Death at the U of Southampton, UK as an external member.",
