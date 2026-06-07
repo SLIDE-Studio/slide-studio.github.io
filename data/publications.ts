@@ -53,10 +53,19 @@ export const publications: Publication[] = [
   //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
   // },
   {
+    title: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., & Kojima, M. (2026, June). Dreaming with MAKOTO: Co-Designing an" Older Adult" Voice Assistant Intervention for Implicit Ageism. In Proceedings of the 19th Participatory Design Conference 2026, Vol. 1: Full Papers (pp. 416-430).",
+    authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
+    venue: "ACM Transactions on Accessible Computing",
+    year: "2026",
+    link: "https://dl.acm.org/doi/10.1145/3806043",
+    rank: "Premier journal in accessible computing",
+  },
+  {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., & Fels, D.",
     venue: "ACM Transactions on Accessible Computing",
     year: "2026",
+    link: "https://dl.acm.org/doi/10.1145/3806043",
     rank: "Premier journal in accessible computing",
   },
   {
@@ -64,6 +73,7 @@ export const publications: Publication[] = [
     authors: "Yoo, S., Nam, S., Chignell, M., & Truong, K.",
     venue: "ACM CHI Conference on Human Factors in Computing Systems",
     year: "2026",
+    link: "https://dl.acm.org/doi/10.1145/3772318.3790521",
     rank: "CORE RANK A*",
   },
   {
@@ -71,6 +81,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Varghese, J., Goel, A., Jung, H.",
     venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
     year: "2026",
+    link: "https://ieeexplore.ieee.org/document/11489900/",
     rank: "CORE RANK A*",
   },
   {
@@ -78,6 +89,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Jung, H., Moon, Y., Uhm, S.",
     venue: "IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
     year: "2026",
+    link: "https://ieeexplore.ieee.org/document/11489879",
     rank: "CORE RANK A*",
   },
   {
@@ -85,6 +97,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "OzCHI 2025: Generative Intelligences, Planetary Futures. 37th Australian Conference on Human-Computer Interaction (HCI). Sydney, Australia",
     year: "2025",
+    link: "https://www.ozchi.org/2025/accepted-papers.php#demos",
     rank: "ERA rank B",
   },
   {
@@ -92,6 +105,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
     venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct). IEEE",
     year: "2025",
+    link: "https://doi.ieeecomputersociety.org/10.1109/ISMAR-Adjunct68609.2025.00263",
     rank: "CORE rank A*",
   },
   {
@@ -99,6 +113,7 @@ export const publications: Publication[] = [
     authors: "Nam, S., Chan, C.",
     venue: "32nd IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing. IEEE",
     year: "2025",
+    link: "https://ieeexplore.ieee.org/document/11252932",
     rank: "CORE rank C",
   },
 ]
