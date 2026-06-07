@@ -41,7 +41,7 @@ export const publications: Publication[] = [
   {
     title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
     authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
-    venue: "Demo at the Graphics Interface Conference (GI 2026)",
+    venue: "Demo at the Graphics Interface (GI) Conference",
     year: "2026",
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     rank: "CORE RANK B",    
@@ -56,7 +56,7 @@ export const publications: Publication[] = [
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
     authors: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., Kojima, M.",
-    venue: "Participatory Design Conference",
+    venue: "Participatory Design Conference (PDC)",
     year: "2026",
     link: "https://dl.acm.org/doi/abs/10.1145/3796624.3796648",
     rank: "CORE RANK B",
@@ -64,7 +64,7 @@ export const publications: Publication[] = [
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., Fels, D.",
-    venue: "ACM Transactions on Accessible Computing",
+    venue: "ACM Transactions on Accessible Computing (TACCESS)",
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3806043",
     rank: "Premier journal in accessible computing",
@@ -72,7 +72,7 @@ export const publications: Publication[] = [
   {
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences Acceptance of Culturally Sensitive Content",
     authors: "Yoo, S., Nam, S., Chignell, M., Truong, K.",
-    venue: "ACM CHI Conference on Human Factors in Computing Systems",
+    venue: "ACM Conference on Human Factors in Computing Systems (CHI)",
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3772318.3790521",
     rank: "CORE RANK A*",
@@ -96,7 +96,7 @@ export const publications: Publication[] = [
   {
     title: "Project LOCOMO: Lower Consumption, More Optimization",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
-    venue: "OzCHI 2025: Generative Intelligences, Planetary Futures. 37th Australian Conference on Human-Computer Interaction (HCI). Sydney, Australia",
+    venue: "Australian Conference on Human-Computer Interaction (OzCHI)",
     year: "2025",
     link: "https://www.ozchi.org/2025/accepted-papers.php#demos",
     rank: "ERA rank B",
@@ -104,7 +104,7 @@ export const publications: Publication[] = [
   {
     title: "Project LOCOMO AR: Augmented Reality with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Jung, H., Moon, Y., Lee, C., Uhm, S.",
-    venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct). IEEE",
+    venue: "IEEE International Symposium on Mixed and Augmented Reality Adjunct (ISMAR-Adjunct)",
     year: "2025",
     link: "https://doi.ieeecomputersociety.org/10.1109/ISMAR-Adjunct68609.2025.00263",
     rank: "CORE rank A*",
@@ -112,7 +112,7 @@ export const publications: Publication[] = [
   {
     title: "Towards Designing User Interfaces for Optimized Human AI Communication and Supervisory Control in Software Engineering",
     authors: "Nam, S., Chan, C.",
-    venue: "32nd IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing. IEEE",
+    venue: "IEEE/ACIS International Summer Virtual Conference on Software Engineering, Artificial Intelligence, Networking and Parallel/Distributed Computing (SNPD)",
     year: "2025",
     link: "https://ieeexplore.ieee.org/document/11252932",
     rank: "CORE rank C",
