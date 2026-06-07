@@ -24,7 +24,7 @@ export default function Page() {
           </div>
           <Research />
           <Team />
-          <Works />
+          <Works preview />
           <Contact />
         </main>
         <Footer />

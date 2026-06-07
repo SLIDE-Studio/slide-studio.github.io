@@ -1,4 +1,4 @@
-import { ExternalLink } from "lucide-react"
+import { ExternalLink, FileText } from "lucide-react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
 import { newsItems } from "@/lib/news-data"
@@ -40,6 +40,17 @@ export default function NewsPage() {
                   >
                     <ExternalLink className="h-3 w-3" />
                     Link
+                  </a>
+                )}
+                {item.paper && (
+                  <a
+                    href={item.paper}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 font-mono text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                  >
+                    <FileText className="h-3 w-3" />
+                    Paper
                   </a>
                 )}
               </div>
