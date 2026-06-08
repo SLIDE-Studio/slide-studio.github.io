@@ -99,6 +99,14 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/masirjaved/"
   },
   {
+    name: "Shrishti Gupta",
+    role: "Undergraduate",
+    focus: "Psychology",
+    initials: "SG",
+    image: "/images/team/sg.png",
+    linkedin: "https://www.linkedin.com/in/shrishti-gupta86483/"
+  },
+  {
     name: "Joel Varghese",
     role: "Master of Computer Science",
     // now: "",
