@@ -96,6 +96,7 @@ const members: TeamMember[] = [
     focus: "Computer Science",
     initials: "MJ",
     image: "/images/team/mj.jpg",
+    linkedin: "https://www.linkedin.com/in/masirjaved/"
   },
   {
     name: "Joel Varghese",
