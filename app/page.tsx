@@ -22,7 +22,7 @@ export default function Page() {
             </div>
             <News />
           </div>
-          <Research />
+          {/* <Research /> */}
           <Team />
           <Works preview />
           <Contact />
