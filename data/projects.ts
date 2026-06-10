@@ -73,7 +73,7 @@ export const projects: Project[] = [
     category: "Accessibility",
     year: "2025",
     description:
-      "Designing and evaluating text rendering techniques in extended reality that improve readability and comprehension for users with low vision, dyslexia, and other reading-related needs.",
+      "Designing and evaluating text rendering methods in extended reality that improve readability and comprehension for d/Deaf and Hard of Hearing users.",
     tags: ["XR", "Accessibility", "Typography", "Low Vision"],
   },
   {
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     category: "Accessibility",
     year: "2025",
     description:
-      "Exploring how physical, graspable interfaces can make digital systems more accessible, designing tangible interaction paradigms that support users with diverse motor, cognitive, and sensory abilities.",
+      "Exploring how physical, graspable interfaces can make digital systems more accessible, designing tangible interaction paradigms that support users.",
     tags: ["Tangible UI", "Accessibility", "Inclusive Design", "Physical Computing"],
   },
 ]
