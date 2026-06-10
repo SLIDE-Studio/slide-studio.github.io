@@ -38,19 +38,31 @@ export function Nav() {
           <SlideLogo size="sm" showSubtitle scrolled={scrolled} />
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center md:flex" aria-label="Primary">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className={`inline-block rounded-md font-mono uppercase tracking-wider text-muted-foreground transition-all duration-300 hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring ${
-                  collapsed
-                    ? "px-2 py-1 text-[10px] opacity-0"
-                    : "px-4 py-2 text-xs opacity-100"
+                aria-label={l.label}
+                className={`group relative flex items-center justify-center rounded-md font-mono uppercase tracking-wider text-muted-foreground transition-all duration-300 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring ${
+                  collapsed ? "h-6 w-6" : "h-9 px-4 hover:bg-muted"
                 }`}
-                tabIndex={collapsed ? -1 : undefined}
               >
-                {l.label}
+                {/* Dot indicator shown when the nav is collapsed */}
+                <span
+                  aria-hidden="true"
+                  className={`absolute h-1.5 w-1.5 rounded-full bg-muted-foreground transition-all duration-300 group-hover:bg-foreground ${
+                    collapsed ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                  }`}
+                />
+                {/* Full label shown when expanded / hovered */}
+                <span
+                  className={`text-xs transition-all duration-300 ${
+                    collapsed ? "scale-95 opacity-0" : "scale-100 opacity-100"
+                  }`}
+                >
+                  {l.label}
+                </span>
               </a>
             </li>
           ))}
