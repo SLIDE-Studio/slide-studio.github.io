@@ -40,6 +40,15 @@ export type Project = {
  */
 
 export const projects: Project[] = [
+  // {
+  //   id: "00",
+  //   title: "Towards Building Inclusive Social Systems through Equitable AI",
+  //   category: "Inclusive Design",
+  //   year: "2026",
+  //   description:
+  //     "Designing an augmented reality conversational agent that supports meaningful social interaction for people living with dementia, exploring empathetic dialogue, memory-aware prompts, and caregiver integration.",
+  //   tags: ["Augmented Reality", "Dementia Care", "Conversational AI", "Inclusive Design"],
+  // },
   {
     id: "01",
     title: "Conversational Agent for People Living with Dementia in Augmented Reality",
