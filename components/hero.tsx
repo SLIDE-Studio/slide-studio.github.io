@@ -31,7 +31,7 @@ export function Hero() {
         </p>
 
         <a
-          href="#research"
+          href="#works"
           className="mt-6 inline-flex items-center gap-3 rounded-md border border-border bg-card/60 px-5 py-3 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
         >
           <ArrowDown className="h-4 w-4" />
