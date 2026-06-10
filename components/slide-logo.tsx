@@ -1,6 +1,7 @@
 interface SlideLogoProps {
   size?: "sm" | "md" | "lg" | "xl"
   showSubtitle?: boolean
+  scrolled?: boolean
 }
 
 const sizeClasses = {
@@ -19,18 +20,44 @@ const letters = [
   { char: "E", color: "hsl(350, 60%, 58%)" },
 ]
 
-export function SlideLogo({ size = "md", showSubtitle = false }: SlideLogoProps) {
+export function SlideLogo({ size = "md", showSubtitle = false, scrolled = false }: SlideLogoProps) {
   return (
     <div className="flex flex-col">
-      <span className={`${sizeClasses[size]} font-bold tracking-tight leading-none`} aria-label="SLIDE">
+      <span
+        className={`${scrolled ? "text-sm" : sizeClasses[size]} flex items-baseline font-bold tracking-tight leading-none transition-all duration-300`}
+        aria-label="SLIDE STUDIO"
+      >
         {letters.map((l, i) => (
-          <span key={i} style={{ color: l.color }} className="transition-colors duration-200">
+          <span
+            key={i}
+            style={{ color: scrolled ? "var(--foreground)" : l.color }}
+            className="transition-colors duration-300"
+          >
             {l.char}
           </span>
         ))}
+        <span
+          aria-hidden={!scrolled}
+          className="inline-flex overflow-hidden whitespace-pre text-foreground transition-all duration-300"
+          style={{
+            maxWidth: scrolled ? "5rem" : "0",
+            opacity: scrolled ? 1 : 0,
+            marginLeft: scrolled ? "0.35rem" : "0",
+          }}
+        >
+          STUDIO
+        </span>
       </span>
       {showSubtitle && (
-        <span className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+        <span
+          className="block overflow-hidden font-mono uppercase tracking-[0.2em] text-muted-foreground transition-all duration-300"
+          style={{
+            maxHeight: scrolled ? "0" : "1rem",
+            opacity: scrolled ? 0 : 1,
+            marginTop: scrolled ? "0" : "0.375rem",
+            fontSize: "10px",
+          }}
+        >
           Research Studio
         </span>
       )}

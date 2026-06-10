@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { SlideLogo } from "@/components/slide-logo"
 
@@ -14,12 +14,28 @@ const links = [
 
 export function Nav() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [hovered, setHovered] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  // When scrolled, links shrink and fade out until the nav is hovered.
+  const collapsed = scrolled && !hovered
 
   return (
-    <header className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm">
+    <header
+      className="sticky top-0 z-50 bg-background/90 backdrop-blur-sm"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
       <nav className="flex items-center justify-between px-6 py-3 lg:px-12">
         <a href="/" className="flex items-center">
-          <SlideLogo size="sm" showSubtitle />
+          <SlideLogo size="sm" showSubtitle scrolled={scrolled} />
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
@@ -27,7 +43,12 @@ export function Nav() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="inline-block rounded-md px-4 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-all duration-200 hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+                className={`inline-block rounded-md font-mono uppercase tracking-wider text-muted-foreground transition-all duration-300 hover:bg-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring ${
+                  collapsed
+                    ? "px-2 py-1 text-[10px] opacity-0"
+                    : "px-4 py-2 text-xs opacity-100"
+                }`}
+                tabIndex={collapsed ? -1 : undefined}
               >
                 {l.label}
               </a>
