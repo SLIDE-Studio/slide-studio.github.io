@@ -1,7 +1,7 @@
 import { Nav } from "@/components/nav"
 import { Hero } from "@/components/hero"
 import { News } from "@/components/news"
-import { Research } from "@/components/research"
+// import { Research } from "@/components/research"
 import { Team } from "@/components/team"
 import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
