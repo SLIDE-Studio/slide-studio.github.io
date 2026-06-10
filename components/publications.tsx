@@ -23,11 +23,25 @@ export function Works({ preview = false }: { preview?: boolean }) {
         {visible.map((pub, idx) => (
           <div
             key={idx}
-            className="group flex flex-col gap-3 border-t border-border py-6 transition-colors duration-200 last:border-b hover:bg-muted/30 lg:flex-row lg:items-start lg:gap-8 lg:py-7"
+            className="group flex flex-col gap-3 border-t border-border py-6 transition-colors duration-200 last:border-b hover:bg-muted/30 sm:flex-row sm:items-start sm:gap-6 lg:py-7"
           >
-            <span className="shrink-0 font-mono text-xs text-muted-foreground lg:w-16 lg:pt-1">
-              {pub.year}
-            </span>
+            <div className="shrink-0 overflow-hidden rounded-md border border-border bg-muted">
+              {pub.thumbnail ? (
+                <img
+                  src={pub.thumbnail || "/placeholder.svg"}
+                  alt={`Thumbnail for ${pub.title}`}
+                  className="h-20 w-28 object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              ) : (
+                <div
+                  aria-hidden="true"
+                  className="flex h-20 w-28 items-center justify-center font-mono text-[10px] uppercase tracking-wider text-muted-foreground"
+                >
+                  {pub.tag ?? "Work"}
+                </div>
+              )}
+            </div>
 
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2">
@@ -46,6 +60,9 @@ export function Works({ preview = false }: { preview?: boolean }) {
                     {pub.title}
                   </h3>
                 )}
+                <span className="font-mono text-xs text-muted-foreground">
+                  {pub.year}
+                </span>
                 {pub.award && (
                   <span className="inline-block rounded-sm bg-primary px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary-foreground">
                     {pub.award}
