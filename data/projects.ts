@@ -42,30 +42,30 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "01",
-    title: "Virtual Conversational Companion for People Living with Dementia in AR",
+    title: "Conversational Agent for People Living with Dementia in Augmented Reality",
     category: "Health & Wellbeing",
     year: "2026",
     description:
-      "Designing an augmented reality conversational companion that supports meaningful social interaction for people living with dementia, exploring empathetic dialogue, memory-aware prompts, and caregiver integration.",
+      "Designing an augmented reality conversational agent that supports meaningful social interaction for people living with dementia, exploring empathetic dialogue, memory-aware prompts, and caregiver integration.",
     tags: ["Augmented Reality", "Dementia Care", "Conversational AI", "Inclusive Design"],
   },
   {
     id: "02",
-    title: "Digital Twin Platform for Sustainable Architecture",
-    category: "Sustainable Design",
-    year: "2026",
-    description:
-      "Designing a digital twin platform that enables architects and urban planners to simulate, visualize, and optimize building sustainability through real-time environmental data and interactive 3D models.",
-    tags: ["Digital Twin", "Sustainability", "Architecture", "Data Visualization"],
-  },
-  {
-    id: "03",
     title: "Sustainable AI Interface for Extended Reality",
     category: "Sustainable HCI",
     year: "2025",
     description:
-      "Investigating how AI-driven interfaces in extended reality environments can be designed to minimize energy consumption and computational overhead while maintaining rich, accessible user experiences.",
+      "Investigating how AI-driven interfaces in extended reality can be designed to minimize energy consumption and computational overhead while maintaining rich, accessible user experiences.",
     tags: ["XR", "Sustainable AI", "Green HCI", "Interaction Design"],
+  },
+  {
+    id: "03",
+    title: "Digital Twin Platform for Sustainable Architecture",
+    category: "Sustainable Design",
+    year: "2026",
+    description:
+      "Designing a digital twin platform that enables architects, building managers, and construction workers to simulate, visualize, and optimize building sustainability through real-time environmental data and interactive 3D models.",
+    tags: ["Digital Twin", "Sustainability", "Architecture", "Data Visualization"],
   },
   {
     id: "04",
