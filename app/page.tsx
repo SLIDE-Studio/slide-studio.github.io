@@ -7,6 +7,7 @@ import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { ShaderBackground } from "@/components/shader-background"
+import { PlaygroundBackground } from "@/components/playground-background"
 import { IntroLoader } from "@/components/intro-loader"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { Marquee } from "@/components/marquee"
@@ -17,6 +18,7 @@ export default function Page() {
     <IntroLoader>
       <SmoothScroll />
       <ShaderBackground />
+      <PlaygroundBackground />
       <div className="relative z-10 mx-auto max-w-5xl border-x border-border bg-background/40 backdrop-blur-[2px]">
         <Nav />
         <main className="flex flex-col gap-8 px-6 lg:px-10">
