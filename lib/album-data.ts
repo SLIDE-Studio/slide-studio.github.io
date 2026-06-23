@@ -34,8 +34,24 @@ export const albums: SeasonAlbum[] = [
     year: 2026,
     description: "Fresh starts, new projects, and warmer days in the studio.",
     photos: [
-      // Add photos here, e.g.:
-      // { src: "/images/album/spring-2026/kickoff.jpg", alt: "Team kickoff meeting", caption: "Semester kickoff" },
+      {
+        src: "/images/album/spring-2026/26SS.jpg",
+        alt: "Six SLIDE Studio lab members posing with peace signs outdoors in front of greenery and roses",
+        caption: "Spring term lab photo",
+      },
+    ],
+  },
+  {
+    id: "winter-2026",
+    season: "Winter",
+    year: 2026,
+    description: "Bundled up and busy — winter term in the studio.",
+    photos: [
+      {
+        src: "/images/album/winter-2026/2526FW.jpg",
+        alt: "Five SLIDE Studio lab members standing in front of the Algoma University building",
+        caption: "Winter term lab photo",
+      },
     ],
   },
 ]
