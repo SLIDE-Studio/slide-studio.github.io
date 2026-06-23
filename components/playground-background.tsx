@@ -1,45 +1,17 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { Canvas, useFrame } from "@react-three/fiber"
+import { Float, Environment, Lightformer } from "@react-three/drei"
+import type { Group, Mesh } from "three"
 
 /**
- * Playful, hand-drawn "playground / kids drawing" parallax background.
- * Crayon-style doodles (stars, squiggles, spirals, hearts, suns, clouds,
- * bubbles) float, wobble, and parallax on scroll. Decorative only.
- * Respects prefers-reduced-motion (renders static, no motion).
+ * Playful "playground" background, now rendered as a real 3D scene (R3F).
+ * Glassy floating bubbles + glossy clay-toy shapes drift in 3D space, lit for a
+ * realistic, refractive look while keeping the bubbly, hand-made aesthetic and
+ * the SLIDE brand palette. Reacts to the pointer with gentle parallax.
+ * Decorative only. Respects prefers-reduced-motion and lightens up on mobile.
  */
-
-type Doodle = {
-  /** position in % */
-  x: number
-  y: number
-  /** rendered size in px */
-  size: number
-  /** brand color */
-  color: string
-  /** scroll-parallax speed (negative moves up as you scroll down) */
-  speed: number
-  /** seconds for the float loop */
-  dur: number
-  /** animation delay in seconds */
-  delay: number
-  /** base rotation in deg */
-  rot: number
-  /** which doodle to draw */
-  kind: Kind
-}
-
-type Kind =
-  | "star"
-  | "squiggle"
-  | "spiral"
-  | "heart"
-  | "sun"
-  | "cloud"
-  | "bubble"
-  | "flower"
-  | "zigzag"
-  | "blob"
 
 const TEAL = "#1b9e6f"
 const BLUE = "#38a5e0"
@@ -47,193 +19,176 @@ const GOLD = "#eab422"
 const CORAL = "#e47a9f"
 const ORANGE = "#e8823a"
 
-const doodles: Doodle[] = [
-  // deep / large + slow
-  { x: 6, y: 10, size: 90, color: GOLD, speed: 0.06, dur: 9, delay: 0, rot: -8, kind: "sun" },
-  { x: 82, y: 14, size: 110, color: BLUE, speed: 0.05, dur: 11, delay: 1.2, rot: 6, kind: "cloud" },
-  { x: 70, y: 60, size: 96, color: CORAL, speed: 0.07, dur: 10, delay: 0.6, rot: -5, kind: "blob" },
-  { x: 12, y: 70, size: 84, color: TEAL, speed: 0.06, dur: 12, delay: 2.0, rot: 10, kind: "flower" },
+type ShapeKind = "sphere" | "torus" | "capsule" | "gem" | "cone" | "donutKnot"
 
-  // mid layer
-  { x: 40, y: 8, size: 54, color: CORAL, speed: 0.12, dur: 7, delay: 0.3, rot: 0, kind: "star" },
-  { x: 90, y: 40, size: 48, color: TEAL, speed: 0.13, dur: 8, delay: 1.0, rot: 12, kind: "spiral" },
-  { x: 22, y: 36, size: 60, color: ORANGE, speed: 0.11, dur: 9, delay: 0.8, rot: -10, kind: "squiggle" },
-  { x: 58, y: 44, size: 44, color: BLUE, speed: 0.14, dur: 7.5, delay: 1.6, rot: 4, kind: "heart" },
-  { x: 84, y: 78, size: 52, color: GOLD, speed: 0.12, dur: 8.5, delay: 0.2, rot: -6, kind: "star" },
-  { x: 33, y: 88, size: 50, color: BLUE, speed: 0.1, dur: 10, delay: 1.4, rot: 8, kind: "zigzag" },
+type ShapeConfig = {
+  position: [number, number, number]
+  scale: number
+  color: string
+  /** glassy refractive bubble vs. glossy solid clay toy */
+  variant: "bubble" | "clay"
+  kind: ShapeKind
+  floatSpeed: number
+  rotIntensity: number
+  floatIntensity: number
+}
 
-  // foreground / small + fast
-  { x: 50, y: 22, size: 26, color: ORANGE, speed: 0.24, dur: 5.5, delay: 0.1, rot: 0, kind: "bubble" },
-  { x: 16, y: 50, size: 30, color: GOLD, speed: 0.26, dur: 6, delay: 0.9, rot: 0, kind: "star" },
-  { x: 76, y: 28, size: 22, color: CORAL, speed: 0.28, dur: 5, delay: 0.5, rot: 0, kind: "bubble" },
-  { x: 64, y: 84, size: 28, color: TEAL, speed: 0.25, dur: 6.5, delay: 1.1, rot: 0, kind: "spiral" },
-  { x: 4, y: 30, size: 24, color: BLUE, speed: 0.3, dur: 5.2, delay: 1.8, rot: 0, kind: "heart" },
-  { x: 94, y: 62, size: 20, color: ORANGE, speed: 0.27, dur: 5.8, delay: 0.4, rot: 0, kind: "bubble" },
-  { x: 44, y: 66, size: 26, color: GOLD, speed: 0.29, dur: 6.2, delay: 1.5, rot: 0, kind: "star" },
+// Hand-placed arrangement spread across depth for parallax.
+const SHAPES: ShapeConfig[] = [
+  { position: [-4.6, 2.4, -2], scale: 1.15, color: GOLD, variant: "clay", kind: "sphere", floatSpeed: 1.1, rotIntensity: 0.6, floatIntensity: 1.4 },
+  { position: [4.5, 1.8, -1.5], scale: 1.3, color: BLUE, variant: "bubble", kind: "sphere", floatSpeed: 0.9, rotIntensity: 0.4, floatIntensity: 1.2 },
+  { position: [3.2, -2.2, -1], scale: 0.95, color: CORAL, variant: "clay", kind: "torus", floatSpeed: 1.3, rotIntensity: 1.1, floatIntensity: 1.5 },
+  { position: [-3.6, -2.1, -1.5], scale: 1.0, color: TEAL, variant: "clay", kind: "donutKnot", floatSpeed: 1.0, rotIntensity: 1.2, floatIntensity: 1.3 },
+  { position: [-1.4, 3.1, -2.5], scale: 0.7, color: CORAL, variant: "bubble", kind: "sphere", floatSpeed: 1.4, rotIntensity: 0.5, floatIntensity: 1.6 },
+  { position: [1.8, 2.6, -1], scale: 0.8, color: TEAL, variant: "clay", kind: "gem", floatSpeed: 1.2, rotIntensity: 1.4, floatIntensity: 1.4 },
+  { position: [-2.2, 0.2, 0.5], scale: 0.85, color: ORANGE, variant: "clay", kind: "capsule", floatSpeed: 1.1, rotIntensity: 1.0, floatIntensity: 1.2 },
+  { position: [2.4, 0.1, 0], scale: 0.75, color: GOLD, variant: "bubble", kind: "sphere", floatSpeed: 1.0, rotIntensity: 0.4, floatIntensity: 1.3 },
+  { position: [0.4, -3.0, -0.5], scale: 0.7, color: BLUE, variant: "clay", kind: "cone", floatSpeed: 1.5, rotIntensity: 1.3, floatIntensity: 1.5 },
+  { position: [4.7, -0.6, -2.5], scale: 0.6, color: ORANGE, variant: "bubble", kind: "sphere", floatSpeed: 1.6, rotIntensity: 0.3, floatIntensity: 1.7 },
+  { position: [-4.8, -0.4, -1], scale: 0.55, color: CORAL, variant: "clay", kind: "gem", floatSpeed: 1.3, rotIntensity: 1.5, floatIntensity: 1.4 },
+  { position: [0.2, 1.0, 1], scale: 0.5, color: TEAL, variant: "bubble", kind: "sphere", floatSpeed: 1.7, rotIntensity: 0.3, floatIntensity: 1.8 },
 ]
 
-function DoodleShape({ kind, color }: { kind: Kind; color: string }) {
-  const common = {
-    fill: "none",
-    stroke: color,
-    strokeWidth: 5,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  }
+function ShapeGeometry({ kind }: { kind: ShapeKind }) {
   switch (kind) {
-    case "star":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <path
-            {...common}
-            d="M50 12 L61 39 L90 41 L67 60 L75 88 L50 72 L25 88 L33 60 L10 41 L39 39 Z"
-          />
-        </svg>
-      )
-    case "squiggle":
-      return (
-        <svg viewBox="0 0 120 60" className="h-full w-full">
-          <path {...common} d="M8 30 C20 6 30 54 44 30 C58 6 68 54 82 30 C96 6 104 50 112 32" />
-        </svg>
-      )
-    case "spiral":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <path
-            {...common}
-            d="M50 50 C50 44 58 44 58 51 C58 61 44 61 44 49 C44 35 64 35 64 52 C64 73 36 73 36 48"
-          />
-        </svg>
-      )
-    case "heart":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <path
-            {...common}
-            d="M50 80 C18 58 20 30 38 30 C48 30 50 40 50 44 C50 40 52 30 62 30 C80 30 82 58 50 80 Z"
-          />
-        </svg>
-      )
-    case "sun":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <circle {...common} cx="50" cy="50" r="20" />
-          <path
-            {...common}
-            d="M50 8 L50 20 M50 80 L50 92 M8 50 L20 50 M80 50 L92 50 M20 20 L29 29 M71 71 L80 80 M80 20 L71 29 M29 71 L20 80"
-          />
-        </svg>
-      )
-    case "cloud":
-      return (
-        <svg viewBox="0 0 120 80" className="h-full w-full">
-          <path
-            {...common}
-            d="M30 60 C12 60 12 38 30 38 C30 20 58 18 60 36 C78 28 92 44 82 56 C96 58 94 60 86 60 Z"
-          />
-        </svg>
-      )
-    case "bubble":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <circle {...common} cx="50" cy="50" r="36" />
-          <path {...common} strokeWidth={4} d="M34 32 C30 38 30 44 33 49" />
-        </svg>
-      )
-    case "flower":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <circle {...common} cx="50" cy="30" r="13" />
-          <circle {...common} cx="70" cy="50" r="13" />
-          <circle {...common} cx="50" cy="70" r="13" />
-          <circle {...common} cx="30" cy="50" r="13" />
-          <circle {...common} cx="50" cy="50" r="9" />
-        </svg>
-      )
-    case "zigzag":
-      return (
-        <svg viewBox="0 0 120 60" className="h-full w-full">
-          <path {...common} d="M8 44 L28 16 L48 44 L68 16 L88 44 L108 16" />
-        </svg>
-      )
-    case "blob":
-      return (
-        <svg viewBox="0 0 100 100" className="h-full w-full">
-          <path
-            {...common}
-            d="M50 14 C72 14 88 30 86 52 C84 74 66 88 46 84 C24 80 12 62 16 42 C20 24 32 14 50 14 Z"
-          />
-        </svg>
-      )
+    case "torus":
+      return <torusGeometry args={[0.7, 0.28, 32, 64]} />
+    case "capsule":
+      return <capsuleGeometry args={[0.45, 0.8, 12, 24]} />
+    case "gem":
+      return <icosahedronGeometry args={[0.95, 0]} />
+    case "cone":
+      return <coneGeometry args={[0.7, 1.3, 32]} />
+    case "donutKnot":
+      return <torusKnotGeometry args={[0.55, 0.2, 128, 24]} />
+    case "sphere":
     default:
-      return null
+      return <sphereGeometry args={[0.8, 48, 48]} />
   }
 }
 
+function Shape({ config, lite }: { config: ShapeConfig; lite: boolean }) {
+  const meshRef = useRef<Mesh>(null)
+
+  // Bubbles use transmission (glass). On lite/mobile we drop the transmission
+  // pass and use a translucent glossy material to stay performant.
+  const isGlass = config.variant === "bubble" && !lite
+
+  return (
+    <Float
+      speed={config.floatSpeed}
+      rotationIntensity={config.rotIntensity}
+      floatIntensity={config.floatIntensity}
+    >
+      <mesh ref={meshRef} position={config.position} scale={config.scale}>
+        <ShapeGeometry kind={config.kind} />
+        {isGlass ? (
+          <meshPhysicalMaterial
+            color={config.color}
+            transmission={1}
+            thickness={0.9}
+            roughness={0.06}
+            ior={1.33}
+            metalness={0}
+            attenuationColor={config.color}
+            attenuationDistance={1.6}
+            clearcoat={1}
+            clearcoatRoughness={0.12}
+            envMapIntensity={1.4}
+          />
+        ) : config.variant === "bubble" ? (
+          <meshPhysicalMaterial
+            color={config.color}
+            roughness={0.15}
+            metalness={0}
+            transparent
+            opacity={0.55}
+            clearcoat={1}
+            clearcoatRoughness={0.2}
+            envMapIntensity={1.2}
+          />
+        ) : (
+          <meshPhysicalMaterial
+            color={config.color}
+            roughness={0.45}
+            metalness={0}
+            clearcoat={0.7}
+            clearcoatRoughness={0.35}
+            sheen={0.4}
+            sheenColor="#ffffff"
+            envMapIntensity={0.7}
+          />
+        )}
+      </mesh>
+    </Float>
+  )
+}
+
+function Scene({ motion, lite }: { motion: boolean; lite: boolean }) {
+  const groupRef = useRef<Group>(null)
+
+  useFrame((state) => {
+    if (!groupRef.current || !motion) return
+    // Gentle pointer parallax.
+    const targetY = state.pointer.x * 0.35
+    const targetX = -state.pointer.y * 0.25
+    groupRef.current.rotation.y += (targetY - groupRef.current.rotation.y) * 0.04
+    groupRef.current.rotation.x += (targetX - groupRef.current.rotation.x) * 0.04
+  })
+
+  return (
+    <>
+      <ambientLight intensity={0.8} />
+      <directionalLight position={[5, 8, 5]} intensity={1.1} />
+      <pointLight position={[-6, -2, 4]} intensity={30} color={CORAL} />
+      <pointLight position={[6, 4, 2]} intensity={24} color={BLUE} />
+
+      <group ref={groupRef}>
+        {SHAPES.map((config, i) => (
+          <Shape key={i} config={config} lite={lite} />
+        ))}
+      </group>
+
+      {/* Lightformer-based environment: realistic reflections, no network. */}
+      <Environment resolution={lite ? 128 : 256}>
+        <Lightformer form="circle" intensity={2} position={[0, 5, -4]} scale={6} color="#fff7e8" />
+        <Lightformer form="circle" intensity={1.4} position={[-5, 1, 1]} scale={4} color={GOLD} />
+        <Lightformer form="circle" intensity={1.4} position={[5, -1, 1]} scale={4} color={BLUE} />
+        <Lightformer form="rect" intensity={1.2} position={[0, -5, 2]} scale={8} color={TEAL} />
+      </Environment>
+    </>
+  )
+}
+
 export function PlaygroundBackground() {
-  const layerRef = useRef<HTMLDivElement>(null)
-  const itemsRef = useRef<(HTMLDivElement | null)[]>([])
+  const [motion, setMotion] = useState(true)
+  const [lite, setLite] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReduced) return
-
-    let rafId = 0
-    let ticking = false
-    const onScroll = () => {
-      if (ticking) return
-      ticking = true
-      rafId = requestAnimationFrame(() => {
-        const scrollY = window.scrollY
-        for (let i = 0; i < itemsRef.current.length; i++) {
-          const el = itemsRef.current[i]
-          if (el) {
-            el.style.transform = `translate3d(0, ${scrollY * doodles[i].speed * -1}px, 0)`
-          }
-        }
-        ticking = false
-      })
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
-    return () => {
-      window.removeEventListener("scroll", onScroll)
-      cancelAnimationFrame(rafId)
-    }
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    const isMobile = window.matchMedia("(max-width: 768px)").matches
+    setMotion(!reduced)
+    setLite(isMobile)
+    setReady(true)
   }, [])
+
+  if (!ready) return null
 
   return (
     <div
-      ref={layerRef}
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+      className="pointer-events-none fixed inset-0 z-0 h-screen w-screen"
     >
-      {doodles.map((d, i) => (
-        <div
-          key={i}
-          ref={(el) => {
-            itemsRef.current[i] = el
-          }}
-          className="absolute will-change-transform"
-          style={{
-            left: `${d.x}%`,
-            top: `${d.y}%`,
-            width: d.size,
-            height: d.size,
-          }}
-        >
-          <div
-            className="playground-float h-full w-full"
-            style={{
-              animationDuration: `${d.dur}s`,
-              animationDelay: `${d.delay}s`,
-              ["--rot" as string]: `${d.rot}deg`,
-              opacity: 0.5,
-            }}
-          >
-            <DoodleShape kind={d.kind} color={d.color} />
-          </div>
-        </div>
-      ))}
+      <Canvas
+        camera={{ position: [0, 0, 9], fov: 45 }}
+        dpr={[1, lite ? 1.25 : 1.6]}
+        gl={{ alpha: true, antialias: !lite, powerPreference: "high-performance" }}
+        frameloop={motion ? "always" : "demand"}
+        style={{ background: "transparent" }}
+      >
+        <Scene motion={motion} lite={lite} />
+      </Canvas>
     </div>
   )
 }
