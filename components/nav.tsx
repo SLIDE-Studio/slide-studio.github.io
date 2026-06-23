@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react"
 import { SlideLogo } from "@/components/slide-logo"
 
 const links = [
-  { label: "Research", href: "/#research" },
+  // { label: "Research", href: "/#research" },
   { label: "Team", href: "/#team" },
   { label: "Works", href: "/works" },
   { label: "News", href: "/news" },
