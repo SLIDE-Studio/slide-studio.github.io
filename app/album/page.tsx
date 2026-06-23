@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { ShaderBackground } from "@/components/shader-background"
 import { PlaygroundBackground } from "@/components/playground-background"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { AlbumGallery } from "@/components/album-gallery"
 import { albums } from "@/lib/album-data"
 
 export const metadata = {
@@ -63,27 +64,10 @@ export default function AlbumPage() {
                   </div>
 
                   {album.photos.length > 0 ? (
-                    <div className="columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
-                      {album.photos.map((photo, i) => (
-                        <figure
-                          key={i}
-                          className={`group relative break-inside-avoid overflow-hidden rounded-xl border border-border bg-card ring-1 ring-inset ${style?.ring ?? "ring-border"} transition-transform duration-300 hover:-translate-y-1`}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={photo.src || "/placeholder.svg"}
-                            alt={photo.alt}
-                            loading="lazy"
-                            className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          {photo.caption && (
-                            <figcaption className="px-3 py-2 font-mono text-xs text-muted-foreground">
-                              {photo.caption}
-                            </figcaption>
-                          )}
-                        </figure>
-                      ))}
-                    </div>
+                    <AlbumGallery
+                      photos={album.photos}
+                      ringClass={style?.ring ?? "ring-border"}
+                    />
                   ) : (
                     <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 px-6 py-16 text-center">
                       <SeasonIcon
