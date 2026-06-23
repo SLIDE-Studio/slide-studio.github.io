@@ -54,17 +54,17 @@ export function Marquee({ items, baseSpeed = 0.6 }: MarqueeProps) {
 
   return (
     <div
-      className="relative flex overflow-hidden border-y border-border bg-card/40 py-4 backdrop-blur-sm"
+      className="relative flex overflow-hidden border-y border-border bg-card/40 py-2 backdrop-blur-sm"
       aria-hidden="true"
     >
       <div ref={trackRef} className="flex shrink-0 flex-nowrap whitespace-nowrap">
         {[...items, ...items, ...items, ...items].map((item, i) => (
           <span
             key={i}
-            className="mx-6 flex items-center gap-6 font-mono text-sm uppercase tracking-[0.25em] text-muted-foreground"
+            className="mx-4 flex items-center gap-4 font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground"
           >
             {item}
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-primary/60" />
+            <span className="inline-block h-1 w-1 rounded-full bg-primary/60" />
           </span>
         ))}
       </div>
