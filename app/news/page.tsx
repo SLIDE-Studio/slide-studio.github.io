@@ -1,6 +1,8 @@
 import { ExternalLink, FileText } from "lucide-react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
+import { ShaderBackground } from "@/components/shader-background"
+import { SmoothScroll } from "@/components/smooth-scroll"
 import { newsItems } from "@/lib/news-data"
 
 export const metadata = {
@@ -10,8 +12,11 @@ export const metadata = {
 
 export default function NewsPage() {
   return (
-    <div className="relative mx-auto max-w-6xl border-x border-border">
-      <Nav />
+    <>
+      <SmoothScroll />
+      <ShaderBackground />
+      <div className="relative z-10 mx-auto max-w-6xl border-x border-border bg-background/40 backdrop-blur-[2px]">
+        <Nav />
       <main className="px-6 pt-28 pb-16 lg:px-10">
         <h1 className="mb-2 font-mono text-xs uppercase tracking-wider text-primary">
           News
@@ -59,6 +64,7 @@ export default function NewsPage() {
         </ol>
       </main>
       <Footer />
-    </div>
+      </div>
+    </>
   )
 }

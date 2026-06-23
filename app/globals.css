@@ -12,6 +12,34 @@ body {
   }
 }
 
+/* Playful "playground" doodle float — gentle bob + wobble */
+@keyframes playground-float {
+  0% {
+    transform: translateY(0) rotate(var(--rot, 0deg)) scale(1);
+  }
+  33% {
+    transform: translateY(-12px) rotate(calc(var(--rot, 0deg) + 6deg)) scale(1.04);
+  }
+  66% {
+    transform: translateY(6px) rotate(calc(var(--rot, 0deg) - 5deg)) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) rotate(var(--rot, 0deg)) scale(1);
+  }
+}
+
+.playground-float {
+  animation-name: playground-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .playground-float {
+    animation: none;
+  }
+}
+
 @layer base {
   :root {
     /* Tinted neutrals - warm cream undertone for approachability */

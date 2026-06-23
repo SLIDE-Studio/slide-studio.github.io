@@ -15,6 +15,8 @@ export type Publication = {
   award?: string
   /** Optional ranking note, e.g. "CORE rank A*", "ERA rank B" */
   rank?: string
+  /** Optional thumbnail image path, e.g. "/images/works/my-paper.png" */
+  thumbnail?: string
 }
 
 /**
@@ -33,6 +35,7 @@ export type Publication = {
  *    link: "https://doi.org/10.1145/xxxxx",          // optional
  *    award: "Best Paper",                             // optional
  *    rank: "CORE rank A*",                            // optional
+ *    thumbnail: "/images/works/your-paper.png",       // optional
  *  },
  * ───────────────────────────────────────────────
  */
