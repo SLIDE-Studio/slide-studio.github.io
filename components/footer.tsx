@@ -14,6 +14,12 @@ export function Footer() {
           &copy; {new Date().getFullYear()} SLIDE Studio
         </p>
       </div>
+
+      <div className="mt-6 border-t border-border pt-6 text-center">
+        <p className="font-mono text-xs text-muted-foreground">
+          Built with Claude Opus 4.8
+        </p>
+      </div>
     </footer>
   )
 }
