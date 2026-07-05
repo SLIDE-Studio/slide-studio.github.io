@@ -1,4 +1,7 @@
+"use client"
+
 import { ArrowUpRight, Mail, MapPin } from "lucide-react"
+import { Magnetic } from "@/components/motion/magnetic"
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/SLIDE-Studio/" },
@@ -62,16 +65,17 @@ export function Contact() {
 
           <div className="mt-4 flex gap-4 border-t border-border pt-6">
             {socialLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-1.5 rounded-md border border-border bg-card/60 px-4 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
-              >
-                {link.label}
-                <ArrowUpRight className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              <Magnetic key={link.label} strength={0.4}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-1.5 rounded-md border border-border bg-card/60 px-4 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  {link.label}
+                  <ArrowUpRight className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </Magnetic>
             ))}
           </div>
         </div>

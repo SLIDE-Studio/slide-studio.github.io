@@ -4,6 +4,7 @@ import { useRef, useEffect } from "react"
 import { ArrowDown } from "lucide-react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { Magnetic } from "@/components/motion/magnetic"
 
 const letters = [
   { char: "S", color: "hsl(165, 50%, 40%)" },
@@ -123,14 +124,16 @@ export function Hero() {
           we design.
         </p>
 
-        <a
-          data-hero-reveal
-          href="#works"
-          className="mt-4 inline-flex items-center gap-3 rounded-md border border-border bg-card/60 px-5 py-3 font-mono text-xs uppercase tracking-wider text-muted-foreground backdrop-blur-sm transition-all duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-        >
-          <ArrowDown className="h-4 w-4 animate-bounce" />
-          Explore our work
-        </a>
+        <Magnetic className="mt-4 inline-block" strength={0.3}>
+          <a
+            data-hero-reveal
+            href="#works"
+            className="inline-flex items-center gap-3 rounded-md border border-border bg-card/60 px-5 py-3 font-mono text-xs uppercase tracking-wider text-muted-foreground backdrop-blur-sm transition-colors duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          >
+            <ArrowDown className="h-4 w-4 animate-bounce" />
+            Explore our work
+          </a>
+        </Magnetic>
       </div>
     </section>
   )
