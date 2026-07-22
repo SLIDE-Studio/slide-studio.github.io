@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-space-grotesk)'],
-        mono: ['var(--font-space-mono)'],
+        mono: ['var(--font-chalk)'],
       },
       colors: {
         background: 'hsl(var(--background))',
