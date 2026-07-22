@@ -115,7 +115,12 @@ body {
   h6 {
     font-family: var(--font-chalk), cursive;
     font-weight: 400;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
+    line-height: 1.08;
+  }
+
+  .font-mono {
+    letter-spacing: 0.08em;
   }
 }
 
