@@ -11,13 +11,13 @@ export function News() {
   return (
     <aside className="w-full shrink-0 pt-0 lg:w-64 lg:pt-24">
       <div className="sticky top-24 rounded-md border border-border bg-card p-5 shadow-sm">
-        <h2 className="mb-4 font-mono text-[10px] uppercase tracking-wider text-primary">
+        <h2 className="mb-4 font-sans text-[10px] uppercase tracking-wider text-primary">
           News
         </h2>
         <ol className="flex flex-col gap-4">
           {visible.map((item, i) => (
             <li key={i} className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] text-muted-foreground">
+              <span className="font-sans text-[10px] text-muted-foreground">
                 {item.date}
               </span>
               <p
@@ -29,7 +29,7 @@ export function News() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-mono text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                  className="flex items-center gap-1 font-sans text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
                 >
                   <ExternalLink className="h-2.5 w-2.5" />
                   Link
@@ -40,7 +40,7 @@ export function News() {
                   href={item.paper}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-mono text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                  className="flex items-center gap-1 font-sans text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
                 >
                   <FileText className="h-2.5 w-2.5" />
                   Paper
@@ -56,7 +56,7 @@ export function News() {
         {hasMore && (
           <Link
             href="/news"
-            className="mt-4 flex w-full items-center justify-center gap-1 border-t border-border pt-3 font-mono text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
+            className="mt-4 flex w-full items-center justify-center gap-1 border-t border-border pt-3 font-sans text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
           >
             See more
             <ArrowRight className="h-3 w-3" />

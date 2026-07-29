@@ -18,7 +18,7 @@ export default function NewsPage() {
       <div className="relative z-10 mx-auto max-w-6xl border-x border-border bg-background/40 backdrop-blur-[2px]">
         <Nav />
       <main className="px-6 pt-28 pb-16 lg:px-10">
-        <h1 className="mb-2 font-mono text-xs uppercase tracking-wider text-primary">
+        <h1 className="mb-2 font-sans text-xs uppercase tracking-wider text-primary">
           News
         </h1>
         <p className="mb-10 text-2xl font-bold tracking-tight text-foreground">
@@ -28,7 +28,7 @@ export default function NewsPage() {
         <ol className="flex flex-col divide-y divide-border">
           {newsItems.map((item, i) => (
             <li key={i} className="flex flex-col gap-1 py-5 sm:flex-row sm:gap-8">
-              <span className="w-20 shrink-0 font-mono text-xs text-muted-foreground">
+              <span className="w-20 shrink-0 font-sans text-xs text-muted-foreground">
                 {item.date}
               </span>
               <div className="flex flex-col gap-1">
@@ -41,7 +41,7 @@ export default function NewsPage() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 font-mono text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                    className="flex items-center gap-1 font-sans text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
                   >
                     <ExternalLink className="h-3 w-3" />
                     Link
@@ -52,7 +52,7 @@ export default function NewsPage() {
                     href={item.paper}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 font-mono text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
+                    className="flex items-center gap-1 font-sans text-xs text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
                   >
                     <FileText className="h-3 w-3" />
                     Paper
