@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { ArrowUpRight, ArrowRight } from "lucide-react"
 import { publications } from "@/data/publications"
+import { Stagger, StaggerItem } from "@/components/motion/stagger"
 
 const PREVIEW_COUNT = 5
 
@@ -19,11 +22,11 @@ export function Works({ preview = false }: { preview?: boolean }) {
         </h2>
       </div>
 
-      <div className="flex flex-col">
+      <Stagger className="flex flex-col">
         {visible.map((pub, idx) => (
-          <div
+          <StaggerItem
             key={idx}
-            className="group flex flex-col gap-3 border-t border-border py-6 transition-colors duration-200 last:border-b hover:bg-muted/30 sm:flex-row sm:items-start sm:gap-6 lg:py-7"
+            className="group flex flex-col gap-3 border-t border-border py-6 transition-all duration-300 last:border-b hover:bg-muted/30 hover:pl-2 sm:flex-row sm:items-start sm:gap-6 lg:py-7"
           >
             <div className="shrink-0 overflow-hidden rounded-md border border-border bg-muted">
               {pub.thumbnail ? (
@@ -81,9 +84,9 @@ export function Works({ preview = false }: { preview?: boolean }) {
                 {pub.venue}
               </p>
             </div>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
 
       {hasMore && (
         <Link

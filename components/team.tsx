@@ -1,6 +1,8 @@
 "use client"
 import { useState, useEffect } from "react"
 import { Users, GraduationCap, Linkedin, ExternalLink } from "lucide-react"
+import { motion } from "motion/react"
+import { Stagger, StaggerItem } from "@/components/motion/stagger"
 
 interface TeamMember {
   name: string
@@ -144,7 +146,7 @@ const alumni: Alumnus[] = [
 
 function MemberCard({ member }: { member: TeamMember }) {
   return (
-    <div className="group [perspective:800px]" style={{ minHeight: 180 }}>
+    <div className="group h-full [perspective:800px]" style={{ minHeight: 180 }}>
       <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
         <div className="absolute inset-0 flex flex-row gap-5 rounded-md border border-border bg-card p-5 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
@@ -209,7 +211,7 @@ function MemberCard({ member }: { member: TeamMember }) {
 
 function AlumnusCard({ alum }: { alum: Alumnus }) {
   return (
-    <div className="group [perspective:800px]" style={{ minHeight: 100 }}>
+    <div className="group h-full [perspective:800px]" style={{ minHeight: 100 }}>
       <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
         <div className="absolute inset-0 flex items-center gap-4 rounded-md border border-border bg-card/80 p-4 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
@@ -276,11 +278,13 @@ export function Team() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {shuffledMembers.map((member) => (
-          <MemberCard key={member.name} member={member} />
+          <StaggerItem key={member.name} className="h-full min-h-[180px]">
+            <MemberCard member={member} />
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
 
       {/* Alumni */}
       <div className="mt-20 mb-16">
@@ -288,25 +292,38 @@ export function Team() {
           <GraduationCap className="h-5 w-5 text-primary" />
           <h3 className="text-2xl font-bold tracking-tight">Alumni</h3>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <Stagger className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {alumni.map((alum) => (
-            <AlumnusCard key={alum.name} alum={alum} />
+            <StaggerItem key={alum.name} className="h-full min-h-[100px]">
+              <AlumnusCard alum={alum} />
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
 
       {/* Join CTA */}
-      <div className="mt-16 flex items-start gap-6 rounded-md border border-primary/20 bg-muted/50 p-6 sm:items-center sm:p-8">
-        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary/10">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        whileHover={{ y: -4, boxShadow: "0 12px 32px -12px hsl(230 65% 50% / 0.25)" }}
+        transition={{ type: "spring", stiffness: 160, damping: 18 }}
+        className="mt-16 flex items-start gap-6 rounded-md border border-primary/20 bg-muted/50 p-6 sm:items-center sm:p-8"
+      >
+        <motion.div
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary/10"
+          whileHover={{ rotate: [0, -8, 8, 0] }}
+          transition={{ duration: 0.5 }}
+        >
           <Users className="h-6 w-6 text-primary" />
-        </div>
+        </motion.div>
         <div>
           <h3 className="text-lg font-bold text-foreground">Join SLIDE Studio</h3>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
             {"We're always looking for curious, compassionate researchers. If you're interested in HCI, inclusive design, or social computing, reach out."}
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

@@ -17,7 +17,7 @@ export function Footer() {
 
       <div className="mt-6 border-t border-border pt-6 text-center">
         <p className="font-mono text-xs text-muted-foreground">
-          Built with Claude Opus 4.8
+          Built with various AI tools including Opus, Fable, SOL
         </p>
       </div>
     </footer>
