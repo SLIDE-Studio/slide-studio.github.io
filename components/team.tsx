@@ -17,7 +17,7 @@ interface TeamMember {
 interface Alumnus {
   name: string
   role: string
-  initials: string
+  initials: string  
   now?: string
   image?: string
   linkedin?: string
@@ -59,7 +59,7 @@ const members: TeamMember[] = [
     initials: "TR",
     image: "/images/team/tr.jpeg",
     linkedin: "https://www.linkedin.com/in/rana-tarang/"
-  },
+  },  
   {
     name: "Rachit Ranabhat",
     role: "Undergraduate",
@@ -95,6 +95,7 @@ const members: TeamMember[] = [
   {
     name: "Joel Varghese",
     role: "Master of Computer Science",
+    focus: "Computer Science",
     // now: "",
     initials: "JV",
     image: "/images/team/jv.jpeg",
@@ -108,15 +109,16 @@ const alumni: Alumnus[] = [
     name: "Harris Adedeji",
     role: "Undergraduate",
     initials: "HA",
+    image: "/images/team/ha.jpeg",
     linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
   },
-  // {
-  //   name: "Masir Javed",
-  //   role: "Undergraduate",
-  //   now: "",
-  //   initials: "MJ",
-  //   linkedin: "https://www.linkedin.com/in/masirjaved/"
-  // },
+  {
+    name: "Masir Javed",
+    role: "Undergraduate",
+    initials: "MJ",
+    image: "/images/team/mj.jpg",
+    linkedin: "https://www.linkedin.com/in/masirjaved/"
+  },
   {
     name: "Presley Kinley",
     role: "Undergraduate",
