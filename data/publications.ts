@@ -44,7 +44,7 @@ export const publications: Publication[] = [
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
-    venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
+    venue: "International Conference on Human-Computer Interaction. Springer Nature Switzerland.",
     year: "2026",
     link: "https://link.springer.com/chapter/10.1007/978-3-032-30826-9_59",
     rank: "Google Scholar HCI Rank 19",
@@ -55,7 +55,7 @@ export const publications: Publication[] = [
     venue: "Demo at the Graphics Interface (GI) Conference",
     year: "2026",
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
-    rank: "CORE RANK B",    
+    rank: "CORE RANK B",
   },
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
