@@ -17,8 +17,8 @@ interface TeamMember {
 interface Alumnus {
   name: string
   role: string
-  now: string
   initials: string
+  now?: string
   image?: string
   linkedin?: string
   memo?: string
@@ -53,21 +53,13 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/muhammad-minhajuddin76/"
   },
   {
-    name: "Harris Adedeji",
-    role: "Undergraduate",
-    focus: "Computer Science",
-    initials: "HA",
-    image: "/images/team/ha.jpeg",
-    linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
-  },
-    {
     name: "Tarang Rana",
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "TR",
     image: "/images/team/tr.jpeg",
     linkedin: "https://www.linkedin.com/in/rana-tarang/"
-  },  
+  },
   {
     name: "Rachit Ranabhat",
     role: "Undergraduate",
@@ -93,14 +85,6 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/niya-jose/"
   },
   {
-    name: "Masir Javed",
-    role: "Undergraduate",
-    focus: "Computer Science",
-    initials: "MJ",
-    image: "/images/team/mj.jpg",
-    linkedin: "https://www.linkedin.com/in/masirjaved/"
-  },
-  {
     name: "Shrishti Gupta",
     role: "Undergraduate",
     focus: "Psychology",
@@ -120,6 +104,19 @@ const members: TeamMember[] = [
 ]
 
 const alumni: Alumnus[] = [
+  {
+    name: "Harris Adedeji",
+    role: "Undergraduate",
+    initials: "HA",
+    linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
+  },
+  // {
+  //   name: "Masir Javed",
+  //   role: "Undergraduate",
+  //   now: "",
+  //   initials: "MJ",
+  //   linkedin: "https://www.linkedin.com/in/masirjaved/"
+  // },
   {
     name: "Presley Kinley",
     role: "Undergraduate",
