@@ -6,6 +6,11 @@
 //   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   {
+    date: "2026.07",
+    text: "Joel Varghese and Niya Jose presenting two posters at the HCII, Montreal.",
+    link: "https://2026.hci.international/",    
+  },
+  {
     date: "2026.06",
     text: "Demo at the Virtual Reality Toronto Spatial Media World Conference.",
     link: "https://conference.virtualreality.to/exhibit/algoma-university/",    
