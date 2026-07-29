@@ -42,6 +42,14 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
+    authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
+    venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
+    year: "2026",
+    link: "https://link.springer.com/chapter/10.1007/978-3-032-30826-9_59",
+    rank: "Google Scholar HCI Rank 19",
+  },
+  {
     title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
     authors: "Javed, M., Ranabhat, R., Rana, T., Sheikh, R., Minhajuddin, M., Nam, S.",
     venue: "Demo at the Graphics Interface (GI) Conference",
@@ -49,13 +57,6 @@ export const publications: Publication[] = [
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     rank: "CORE RANK B",    
   },
-  // {
-  //   title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
-  //   authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
-  //   venue: "International Conference on Human-Computer Interaction. Cham: Springer Nature Switzerland.",
-  //   year: "2026",
-  //   rank: "Google Scholar Metrics h5-index 45 (acceptance rate ~30%)",
-  // },
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
     authors: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., Kojima, M.",
