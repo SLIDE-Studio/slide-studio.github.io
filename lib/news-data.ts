@@ -7,7 +7,7 @@
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   {
     date: "2026.07",
-    text: "Joel Varghese and Niya Jose presenting two posters at the HCII, Montreal.",
+    text: "Joel Varghese, Niya Jose, Muhammad Minhajuddin are presenting two posters at the HCII, Montreal.",
     link: "https://2026.hci.international/",    
   },
   {
