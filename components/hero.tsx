@@ -10,7 +10,7 @@ export function Hero() {
 
       <div className="flex max-w-4xl flex-col gap-8 py-20">
         <p className="text-sm uppercase tracking-[0.18em] text-muted-foreground">SociaL Interaction DEsign Research Studio</p>
-        <h1 className="text-balance text-6xl font-light leading-[0.94] sm:text-7xl md:text-8xl lg:text-9xl">Designing inclusive futures.</h1>
+        {/* <h1 className="text-balance text-6xl font-light leading-[0.94] sm:text-7xl md:text-8xl lg:text-9xl">Designing inclusive futures.</h1> */}
         <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
           We research how people interact with technology and each other, centering accessibility, equity, and social connection in every system we design.
         </p>
