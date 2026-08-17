@@ -12,23 +12,22 @@ export function Works({ preview = false }: { preview?: boolean }) {
   const hasMore = preview && publications.length > PREVIEW_COUNT
 
   return (
-    <section id="works" className="relative rounded-md border border-border bg-card px-6 py-20 lg:px-10">
-      <div className="mb-14">
-        <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-primary">
-          Output
-        </p>
-        <h2 className="text-3xl font-bold tracking-tight text-card-foreground md:text-4xl lg:text-5xl">
-          Works
-        </h2>
+    <section id="works" className="relative border-t border-border py-20">
+      <div className="mb-16 flex items-end justify-between gap-6">
+        <div>
+          <p className="mb-4 text-sm text-muted-foreground">Research output</p>
+          <h2 className="text-5xl font-light tracking-tight md:text-6xl">Works</h2>
+        </div>
+        <p className="hidden max-w-xs text-right text-sm leading-relaxed text-muted-foreground sm:block">Selected publications, projects, and research contributions from the studio.</p>
       </div>
 
       <Stagger className="flex flex-col">
         {visible.map((pub, idx) => (
           <StaggerItem
             key={idx}
-            className="group flex flex-col gap-3 border-t border-border py-6 transition-all duration-300 last:border-b hover:bg-muted/30 hover:pl-2 sm:flex-row sm:items-start sm:gap-6 lg:py-7"
+            className="group flex flex-col gap-4 border-t border-border py-7 last:border-b sm:flex-row sm:items-start sm:gap-8"
           >
-            <div className="shrink-0 overflow-hidden rounded-md border border-border bg-muted">
+            <div className="shrink-0 overflow-hidden border border-border bg-muted">
               {pub.thumbnail ? (
                 <img
                   src={pub.thumbnail || "/placeholder.svg"}
@@ -53,13 +52,13 @@ export function Works({ preview = false }: { preview?: boolean }) {
                     href={pub.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-bold leading-snug tracking-tight text-card-foreground underline decoration-transparent underline-offset-2 transition-colors duration-150 hover:decoration-primary focus-visible:ring-2 focus-visible:ring-ring lg:text-lg"
+                    className="text-base font-medium leading-snug tracking-tight text-card-foreground underline decoration-transparent underline-offset-4 transition-colors hover:decoration-foreground lg:text-lg"
                   >
                     {pub.title}
                     <ArrowUpRight className="ml-1 inline-block h-4 w-4 text-primary" />
                   </a>
                 ) : (
-                  <h3 className="text-base font-bold leading-snug tracking-tight text-card-foreground lg:text-lg">
+                  <h3 className="text-base font-medium leading-snug tracking-tight text-card-foreground lg:text-lg">
                     {pub.title}
                   </h3>
                 )}
@@ -67,12 +66,12 @@ export function Works({ preview = false }: { preview?: boolean }) {
                   {pub.year}
                 </span>
                 {pub.award && (
-                  <span className="inline-block rounded-sm bg-primary px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary-foreground">
+                  <span className="inline-block border border-foreground px-2 py-0.5 text-[10px] uppercase tracking-wider text-foreground">
                     {pub.award}
                   </span>
                 )}
                 {pub.rank && (
-                  <span className="inline-block rounded-sm border border-primary/30 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
+                  <span className="inline-block border border-border px-2 py-0.5 text-[10px] uppercase tracking-wider text-muted-foreground">
                     {pub.rank}
                   </span>
                 )}
@@ -80,7 +79,7 @@ export function Works({ preview = false }: { preview?: boolean }) {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {pub.authors}
               </p>
-              <p className="mt-1 font-mono text-xs text-primary/80">
+              <p className="mt-1 text-xs text-muted-foreground">
                 {pub.venue}
               </p>
             </div>

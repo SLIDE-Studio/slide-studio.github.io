@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-space-grotesk)'],
-        mono: ['var(--font-chalk)'],
+        sans: ['var(--font-manrope)'],
+        mono: ['var(--font-manrope)'],
       },
       colors: {
         background: 'hsl(var(--background))',

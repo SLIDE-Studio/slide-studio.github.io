@@ -6,62 +6,28 @@ const PREVIEW_COUNT = 5
 
 export function News() {
   const visible = newsItems.slice(0, PREVIEW_COUNT)
-  const hasMore = newsItems.length > PREVIEW_COUNT
 
   return (
-    <aside className="w-full shrink-0 pt-0 lg:w-64 lg:pt-24">
-      <div className="sticky top-24 rounded-md border border-border bg-card p-5 shadow-sm">
-        <h2 className="mb-4 font-sans text-[10px] uppercase tracking-wider text-primary">
-          News
-        </h2>
-        <ol className="flex flex-col gap-4">
+    <aside className="w-full shrink-0 border-t border-border py-10 lg:w-72 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-16">
+      <div className="sticky top-28">
+        <div className="mb-8 flex items-baseline justify-between border-b border-border pb-3">
+          <h2 className="text-sm font-normal tracking-normal">News</h2>
+          <Link href="/news" className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground">
+            All updates <ArrowRight className="h-3 w-3" />
+          </Link>
+        </div>
+        <ol className="flex flex-col">
           {visible.map((item, i) => (
-            <li key={i} className="flex flex-col gap-1">
-              <span className="font-sans text-[10px] text-muted-foreground">
-                {item.date}
-              </span>
-              <p
-                className="text-xs leading-relaxed text-foreground [&_a]:underline [&_a]:decoration-muted-foreground [&_a]:underline-offset-2 [&_a:hover]:text-primary [&_a:hover]:decoration-primary"
-                dangerouslySetInnerHTML={{ __html: item.text }}
-              />
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-sans text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
-                >
-                  <ExternalLink className="h-2.5 w-2.5" />
-                  Link
-                </a>
-              )}
-              {item.paper && (
-                <a
-                  href={item.paper}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1 font-sans text-[10px] text-muted-foreground underline underline-offset-2 transition-colors hover:text-primary"
-                >
-                  <FileText className="h-2.5 w-2.5" />
-                  Paper
-                </a>
-              )}
-              {i < visible.length - 1 && (
-                <div className="mt-2 border-b border-border" />
-              )}
+            <li key={i} className="border-b border-border py-4 first:pt-0">
+              <span className="mb-1 block text-xs text-muted-foreground">{item.date}</span>
+              <p className="text-sm leading-relaxed text-foreground [&_a]:underline [&_a]:underline-offset-3" dangerouslySetInnerHTML={{ __html: item.text }} />
+              <div className="mt-2 flex gap-3">
+                {item.link && <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline underline-offset-3 hover:text-foreground"><ExternalLink className="h-3 w-3" />Link</a>}
+                {item.paper && <a href={item.paper} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-muted-foreground underline underline-offset-3 hover:text-foreground"><FileText className="h-3 w-3" />Paper</a>}
+              </div>
             </li>
           ))}
         </ol>
-
-        {hasMore && (
-          <Link
-            href="/news"
-            className="mt-4 flex w-full items-center justify-center gap-1 border-t border-border pt-3 font-sans text-[10px] uppercase tracking-wider text-muted-foreground transition-colors hover:text-primary"
-          >
-            See more
-            <ArrowRight className="h-3 w-3" />
-          </Link>
-        )}
       </div>
     </aside>
   )
