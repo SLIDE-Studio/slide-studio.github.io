@@ -7,10 +7,11 @@ import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { IntroLoader } from "@/components/intro-loader"
 
 export default function Page() {
   return (
-    <>
+    <IntroLoader>
       <SmoothScroll />
       <div className="mx-auto max-w-6xl border-x border-border bg-background">
         <Nav />
@@ -37,6 +38,6 @@ export default function Page() {
         </main>
         <Footer />
       </div>
-    </>
+    </IntroLoader>
   )
 }
