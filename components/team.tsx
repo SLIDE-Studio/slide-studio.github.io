@@ -17,8 +17,8 @@ interface TeamMember {
 interface Alumnus {
   name: string
   role: string
-  now: string
-  initials: string
+  initials: string  
+  now?: string
   image?: string
   linkedin?: string
   memo?: string
@@ -53,14 +53,6 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/muhammad-minhajuddin76/"
   },
   {
-    name: "Harris Adedeji",
-    role: "Undergraduate",
-    focus: "Computer Science",
-    initials: "HA",
-    image: "/images/team/ha.jpeg",
-    linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
-  },
-    {
     name: "Tarang Rana",
     role: "Undergraduate",
     focus: "Computer Science",
@@ -93,14 +85,6 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/niya-jose/"
   },
   {
-    name: "Masir Javed",
-    role: "Undergraduate",
-    focus: "Computer Science",
-    initials: "MJ",
-    image: "/images/team/mj.jpg",
-    linkedin: "https://www.linkedin.com/in/masirjaved/"
-  },
-  {
     name: "Shrishti Gupta",
     role: "Undergraduate",
     focus: "Psychology",
@@ -111,6 +95,7 @@ const members: TeamMember[] = [
   {
     name: "Joel Varghese",
     role: "Master of Computer Science",
+    focus: "Computer Science",
     // now: "",
     initials: "JV",
     image: "/images/team/jv.jpeg",
@@ -120,6 +105,20 @@ const members: TeamMember[] = [
 ]
 
 const alumni: Alumnus[] = [
+  {
+    name: "Harris Adedeji",
+    role: "Undergraduate",
+    initials: "HA",
+    image: "/images/team/ha.jpeg",
+    linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
+  },
+  {
+    name: "Masir Javed",
+    role: "Undergraduate",
+    initials: "MJ",
+    image: "/images/team/mj.jpg",
+    linkedin: "https://www.linkedin.com/in/masirjaved/"
+  },
   {
     name: "Presley Kinley",
     role: "Undergraduate",
@@ -149,7 +148,7 @@ function MemberCard({ member }: { member: TeamMember }) {
     <div className="group h-full [perspective:800px]" style={{ minHeight: 180 }}>
       <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
-        <div className="absolute inset-0 flex flex-row gap-5 rounded-md border border-border bg-card p-5 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
+        <div className="absolute inset-0 flex flex-row gap-5 border border-border bg-card p-5 [backface-visibility:hidden]">
           {/* Left: profile picture + name */}
           <div className="flex shrink-0 flex-col items-center gap-2">
             {member.image ? (
@@ -214,7 +213,7 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
     <div className="group h-full [perspective:800px]" style={{ minHeight: 100 }}>
       <div className="relative h-full w-full transition-transform duration-500 ease-out [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
         {/* Front */}
-        <div className="absolute inset-0 flex items-center gap-4 rounded-md border border-border bg-card/80 p-4 shadow-sm transition-shadow duration-300 group-hover:shadow-md [backface-visibility:hidden]">
+        <div className="absolute inset-0 flex items-center gap-4 border border-border bg-card p-4 [backface-visibility:hidden]">
           {alum.image ? (
             <img
               src={alum.image}
@@ -270,12 +269,8 @@ export function Team() {
   return (
     <section id="team" className="py-24">
       <div className="mb-16">
-        <p className="mb-2 font-mono text-xs uppercase tracking-[0.3em] text-primary">
-          People
-        </p>
-        <h2 className="text-4xl font-bold tracking-tight md:text-5xl">
-          Our Team
-        </h2>
+        <p className="mb-4 text-sm text-muted-foreground">People</p>
+        <h2 className="text-5xl font-light tracking-tight md:text-6xl">Our team</h2>
       </div>
 
       <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -306,12 +301,11 @@ export function Team() {
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
-        whileHover={{ y: -4, boxShadow: "0 12px 32px -12px hsl(230 65% 50% / 0.25)" }}
         transition={{ type: "spring", stiffness: 160, damping: 18 }}
-        className="mt-16 flex items-start gap-6 rounded-md border border-primary/20 bg-muted/50 p-6 sm:items-center sm:p-8"
+        className="mt-16 flex items-start gap-6 border-y border-border py-8 sm:items-center"
       >
         <motion.div
-          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-primary/10"
+          className="flex h-12 w-12 shrink-0 items-center justify-center border border-border"
           whileHover={{ rotate: [0, -8, 8, 0] }}
           transition={{ duration: 0.5 }}
         >

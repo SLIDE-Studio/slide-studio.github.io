@@ -1,82 +1,34 @@
-"use client"
-
-import { ArrowUpRight, Mail, MapPin } from "lucide-react"
-import { Magnetic } from "@/components/motion/magnetic"
+import { ArrowUpRight } from "lucide-react"
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/SLIDE-Studio/" },
   { label: "Scholar", href: "https://scholar.google.com/citations?user=NE2tiHsAAAAJ&hl=ko&oi=ao" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/slideresearch"}, 
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/slideresearch" },
 ]
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20">
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+    <section id="contact" className="border-t border-border py-20">
+      <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr]">
         <div>
-          <p className="mb-2 font-mono text-xs uppercase tracking-[0.25em] text-primary">
-            Connect
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-            Get in Touch
-          </h2>
-          <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-            Interested in collaboration, visiting the lab, or joining our
-            research? We welcome inquiries from designers, engineers,
-            and anyone passionate about inclusive technology.
-          </p>
+          <p className="mb-4 text-sm text-muted-foreground">Contact</p>
+          <h2 className="text-5xl font-light tracking-tight md:text-6xl">Get in touch.</h2>
         </div>
-
-        <div className="flex flex-col gap-6">
-          <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
-              <Mail className="h-5 w-5 text-primary" />
+        <div className="flex flex-col gap-10">
+          <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">Interested in collaboration, visiting the lab, or joining our research? We welcome inquiries from designers, engineers, and anyone passionate about inclusive technology.</p>
+          <div className="grid gap-8 border-t border-border pt-6 sm:grid-cols-2">
+            <div>
+              <p className="mb-2 text-xs text-muted-foreground">Email</p>
+              <a href="mailto:slidelab@algomau.ca" className="inline-flex items-center gap-2 text-base underline underline-offset-4">slidelab@algomau.ca <ArrowUpRight className="h-4 w-4" /></a>
             </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                Email
-              </span>
-              <a
-                href="mailto:slidelab@algomau.ca"
-                className="group flex items-center gap-2 text-base font-bold transition-colors duration-150 hover:text-primary focus-visible:ring-2 focus-visible:ring-ring md:text-lg"
-              >
-                slidelab@algomau.ca
-                <ArrowUpRight className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+            <div>
+              <p className="mb-2 text-xs text-muted-foreground">Location</p>
+              <p className="text-base">Algoma University, Canada</p>
+              <p className="text-sm text-muted-foreground">School of Computer Science and IT</p>
             </div>
           </div>
-
-          <div className="flex items-start gap-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-primary/10">
-              <MapPin className="h-5 w-5 text-primary" />
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-                Location
-              </span>
-              <p className="text-base font-bold md:text-lg">
-                Algoma University, Canada
-              </p>
-              <p className="text-sm text-muted-foreground">
-                School of Computer Science and IT
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-4 flex gap-4 border-t border-border pt-6">
-            {socialLinks.map((link) => (
-              <Magnetic key={link.label} strength={0.4}>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1.5 rounded-md border border-border bg-card/60 px-4 py-2 font-mono text-xs uppercase tracking-wider text-muted-foreground transition-colors duration-200 hover:border-primary/30 hover:bg-card hover:text-primary focus-visible:ring-2 focus-visible:ring-ring"
-                >
-                  {link.label}
-                  <ArrowUpRight className="h-3 w-3 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              </Magnetic>
-            ))}
+          <div className="flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-6">
+            {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm underline decoration-border underline-offset-4 hover:decoration-foreground">{link.label}<ArrowUpRight className="h-3.5 w-3.5" /></a>)}
           </div>
         </div>
       </div>

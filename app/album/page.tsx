@@ -1,8 +1,6 @@
 import { Flower2, Sun, Leaf, Snowflake, Camera, type LucideIcon } from "lucide-react"
 import { Nav } from "@/components/nav"
 import { Footer } from "@/components/footer"
-import { ShaderBackground } from "@/components/shader-background"
-import { PlaygroundBackground } from "@/components/playground-background"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { AlbumGallery } from "@/components/album-gallery"
 import { albums } from "@/lib/album-data"
@@ -17,28 +15,24 @@ const seasonStyles: Record<
   string,
   { icon: LucideIcon; chip: string; ring: string }
 > = {
-  Spring: { icon: Flower2, chip: "bg-accent/15 text-accent", ring: "ring-accent/30" },
-  Summer: { icon: Sun, chip: "bg-primary/15 text-primary", ring: "ring-primary/30" },
-  Fall: { icon: Leaf, chip: "bg-destructive/15 text-destructive", ring: "ring-destructive/30" },
-  Winter: { icon: Snowflake, chip: "bg-secondary/40 text-secondary-foreground", ring: "ring-border" },
+  Spring: { icon: Flower2, chip: "text-foreground", ring: "ring-border" },
+  Summer: { icon: Sun, chip: "text-foreground", ring: "ring-border" },
+  Fall: { icon: Leaf, chip: "text-foreground", ring: "ring-border" },
+  Winter: { icon: Snowflake, chip: "text-foreground", ring: "ring-border" },
 }
 
 export default function AlbumPage() {
   return (
     <>
       <SmoothScroll />
-      <ShaderBackground />
-      <PlaygroundBackground />
-      <div className="relative z-10 mx-auto max-w-6xl border-x border-border bg-background/40 backdrop-blur-[2px]">
+      <div className="mx-auto max-w-6xl border-x border-border bg-background">
         <Nav />
-        <main className="px-6 pt-28 pb-16 lg:px-10">
-          <h1 className="mb-2 font-mono text-xs uppercase tracking-wider text-primary">
-            Album
+        <main className="px-6 pb-20 pt-16 lg:px-10">
+          <p className="mb-4 text-sm text-muted-foreground">Album</p>
+          <h1 className="mb-6 text-balance text-5xl font-light tracking-tight text-foreground md:text-7xl">
+            Seasons in the studio
           </h1>
-          <p className="mb-3 text-3xl font-bold tracking-tight text-foreground text-balance md:text-4xl">
-            Seasons in the Studio
-          </p>
-          <p className="mb-12 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          <p className="mb-16 max-w-xl text-base leading-relaxed text-muted-foreground">
             A seasonal scrapbook of life around the lab — outings, celebrations,
             and the little moments in between.
           </p>
@@ -51,7 +45,7 @@ export default function AlbumPage() {
                 <section key={album.id} id={album.id} className="scroll-mt-28">
                   <div className="mb-6 flex flex-wrap items-baseline gap-3">
                     <span
-                      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 font-mono text-xs uppercase tracking-wider ${style?.chip ?? "bg-muted text-muted-foreground"}`}
+                      className={`inline-flex items-center gap-2 border-b border-foreground pb-1 text-sm ${style?.chip ?? "text-foreground"}`}
                     >
                       <SeasonIcon className="h-3.5 w-3.5" aria-hidden="true" />
                       {album.season} {album.year}
@@ -69,7 +63,7 @@ export default function AlbumPage() {
                       ringClass={style?.ring ?? "ring-border"}
                     />
                   ) : (
-                    <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-card/50 px-6 py-16 text-center">
+                    <div className="flex flex-col items-center justify-center border border-dashed border-border px-6 py-16 text-center">
                       <SeasonIcon
                         className="mb-3 h-8 w-8 text-muted-foreground"
                         aria-hidden="true"
