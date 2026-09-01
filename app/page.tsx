@@ -7,11 +7,13 @@ import { Works } from "@/components/publications"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { SmoothScroll } from "@/components/smooth-scroll"
+import { LatestGroupPhoto } from "@/components/latest-group-photo"
 
 export default function Page() {
   return (
     <>
       <SmoothScroll />
+      <LatestGroupPhoto />
       <div className="mx-auto max-w-6xl border-x border-border bg-background">
         <Nav />
         <main className="flex flex-col gap-8 px-6 lg:px-10">
