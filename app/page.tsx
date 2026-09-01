@@ -8,10 +8,11 @@ import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { SmoothScroll } from "@/components/smooth-scroll"
 import { LatestGroupPhoto } from "@/components/latest-group-photo"
+import { IntroLoader } from "@/components/intro-loader"
 
 export default function Page() {
   return (
-    <>
+    <IntroLoader>
       <SmoothScroll />
       <LatestGroupPhoto />
       <div className="mx-auto max-w-6xl border-x border-border bg-background">
@@ -39,6 +40,6 @@ export default function Page() {
         </main>
         <Footer />
       </div>
-    </>
+    </IntroLoader>
   )
 }

@@ -27,8 +27,8 @@ export function LatestGroupPhoto() {
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
-          src="/images/1000091116.png"
-          alt="Latest group photo from SLIDE Studio"
+          src="/images/album/spring-2026/26SS.jpg"
+          alt="Six SLIDE Studio lab members posing with peace signs outdoors in front of greenery and roses"
           fill
           sizes="(max-width: 640px) calc(100vw - 2rem), 18rem"
           className="object-cover"
