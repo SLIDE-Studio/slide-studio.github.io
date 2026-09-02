@@ -107,13 +107,15 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Computer Science",
     initials: "RS",
+    image: "/images/team/raafay.jpeg",
     linkedin: "https://linkedin.com/in/abdul-raafay-sheikh-833091400"
   },
   {
     name: "Raish Mulmi",
     role: "Undergraduate",
     focus: "Computer Science",
-    initials: "RM"
+    initials: "RM",
+    image: "/images/team/mulmi.jpg"
   },
   {
     name: "Vikas Saahil",
