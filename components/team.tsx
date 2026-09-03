@@ -102,6 +102,35 @@ const members: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/joel662/",
     memo: "Research Affiliate.\nGraduated in Spring, 2026"
   },
+  {
+    name: "Raafay Sheikh",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "RS",
+    image: "/images/team/raafay.jpeg",
+    linkedin: "https://linkedin.com/in/abdul-raafay-sheikh-833091400"
+  },
+  {
+    name: "Raish Mulmi",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "RM",
+    image: "/images/team/mulmi.jpg"
+  },
+  {
+    name: "Vikas Saahil",
+    role: "Undergraduate",
+    focus: "Computer Science",
+    initials: "VS",
+    linkedin: "https://linkedin.com/in/vikas-saahil"
+  },
+  {
+    name: "Yara Showkini",
+    role: "Undergraduate",
+    focus: "Psychology",
+    initials: "YS",
+    linkedin: "https://linkedin.com/in/yara-showkini"
+  },
 ]
 
 const alumni: Alumnus[] = [
