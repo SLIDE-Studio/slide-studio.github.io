@@ -16,16 +16,22 @@ export function LatestGroupPhoto() {
       if (event.key === "Escape") setIsOpen(false)
     }
 
-    const onScroll = () => {
-      if (dismissTimer) clearTimeout(dismissTimer)
+    const dismissAfterScroll = () => {
+      if (dismissTimer) return
       dismissTimer = setTimeout(() => setIsOpen(false), 5000)
     }
 
     window.addEventListener("keydown", onKeyDown)
-    window.addEventListener("scroll", onScroll, { passive: true })
+    // Listen to both native scrolling and Lenis' wheel/touch input. Lenis
+    // smooths the scroll without always dispatching a native scroll event.
+    window.addEventListener("scroll", dismissAfterScroll, { passive: true })
+    window.addEventListener("wheel", dismissAfterScroll, { passive: true })
+    window.addEventListener("touchmove", dismissAfterScroll, { passive: true })
     return () => {
       window.removeEventListener("keydown", onKeyDown)
-      window.removeEventListener("scroll", onScroll)
+      window.removeEventListener("scroll", dismissAfterScroll)
+      window.removeEventListener("wheel", dismissAfterScroll)
+      window.removeEventListener("touchmove", dismissAfterScroll)
       if (dismissTimer) clearTimeout(dismissTimer)
     }
   }, [isOpen])
