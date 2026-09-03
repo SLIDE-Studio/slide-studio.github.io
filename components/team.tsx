@@ -129,6 +129,7 @@ const members: TeamMember[] = [
     role: "Undergraduate",
     focus: "Psychology",
     initials: "YS",
+    image: "/images/team/yara.png",
     linkedin: "https://linkedin.com/in/yara-showkini"
   },
 ]
