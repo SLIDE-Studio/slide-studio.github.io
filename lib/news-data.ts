@@ -6,13 +6,28 @@
 //   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   {
+    date: "2026.10",
+    text: "A full paper by Muhammad Minhajuddin & Joel Varghese was accepted at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
+    link: "https://2026.hci.international/",    
+  },
+  {
+    date: "2026.10",
+    text: "A short paper (poster) by Joel Varghese, Muhammad Minhajuddin, Harris Adedeji was accepted at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
+    link: "https://sui.acm.org/2026/",    
+  },
+  {
+    date: "2026.10",
+    text: "A short paper (poster) by Joel Varghese, Tarang Rana, Muhammad Minhajuddin, Niya Jose was accepted at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
+    link: "https://www.ieeeismar.net/2026/",    
+  },
+  {
     date: "2026.07",
-    text: "Joel Varghese, Niya Jose, Muhammad Minhajuddin are presenting two posters at the HCII, Montreal.",
+    text: "Joel Varghese, Niya Jose, Muhammad Minhajuddin are presenting two posters at the International Conference on Human-Computer Interaction (HCII), Montreal, Canada.",
     link: "https://2026.hci.international/",    
   },
   {
     date: "2026.06",
-    text: "Demo at the Virtual Reality Toronto Spatial Media World Conference.",
+    text: "We will hold a demo booth at the Virtual Reality Toronto (VRTO) Spatial Media World Conference.",
     link: "https://conference.virtualreality.to/exhibit/algoma-university/",    
   },
   {
