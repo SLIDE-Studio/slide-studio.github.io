@@ -5,20 +5,25 @@
 //   link?: optional external URL — renders as a "Link" icon link after the text
 //   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
+  // {
+  //   date: "2026.10",
+  //   text: "A full paper by Muhammad & Joel was accepted at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
+  //   link: "https://ieee-isemv.org/",
+  // },
+  // {
+  //   date: "2026.10",
+  //   text: "A short paper (poster) by Joel, Muhammad, Harris was accepted at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
+  //   link: "https://sui.acm.org/2026/",
+  // },
+  // {
+  //   date: "2026.10",
+  //   text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was accepted at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
+  //   link: "https://www.ieeeismar.net/2026/",
+  // },
   {
-    date: "2026.10",
-    text: "A full paper by Muhammad & Joel was accepted at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
-    link: "https://ieee-isemv.org/",
-  },
-  {
-    date: "2026.10",
-    text: "A short paper (poster) by Joel, Muhammad, Harris was accepted at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
-    link: "https://sui.acm.org/2026/",
-  },
-  {
-    date: "2026.10",
-    text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was accepted at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
-    link: "https://www.ieeeismar.net/2026/",
+    date: "2026.09",
+    text: "Dr. Nam officially joined the Cochrane: Priority Setting Methods Group as a Co-Convenor.",
+    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026",
   },
   {
     date: "2026.07",
