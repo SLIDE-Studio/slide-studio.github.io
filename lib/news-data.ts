@@ -5,19 +5,39 @@
 //   link?: optional external URL — renders as a "Link" icon link after the text
 //   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
+  // {
+  //   date: "2026.10",
+  //   text: "A full paper by Muhammad & Joel was accepted at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
+  //   link: "https://ieee-isemv.org/",
+  // },
+  // {
+  //   date: "2026.10",
+  //   text: "A short paper (poster) by Joel, Muhammad, Harris was accepted at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
+  //   link: "https://sui.acm.org/2026/",
+  // },
+  // {
+  //   date: "2026.10",
+  //   text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was accepted at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
+  //   link: "https://www.ieeeismar.net/2026/",
+  // },
+  {
+    date: "2026.09",
+    text: "Dr. Nam officially joined the Cochrane: Priority Setting Methods Group as a Co-Convenor.",
+    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026",
+  },
   {
     date: "2026.07",
-    text: "Joel Varghese, Niya Jose, Muhammad Minhajuddin are presenting two posters at the HCII, Montreal.",
-    link: "https://2026.hci.international/",    
+    text: "Two short papers (poster) by Joel, Niya, Muhammad were accepted the International Conference on Human-Computer Interaction (HCII), Montreal, Canada.",
+    link: "https://2026.hci.international/",
   },
   {
     date: "2026.06",
-    text: "Demo at the Virtual Reality Toronto Spatial Media World Conference.",
-    link: "https://conference.virtualreality.to/exhibit/algoma-university/",    
+    text: "We will hold a demo booth at the Virtual Reality Toronto (VRTO) Spatial Media World Conference.",
+    link: "https://conference.virtualreality.to/exhibit/algoma-university/",
   },
   {
     date: "2026.05",
-    text: "Masir Javed, Rachit Ranabhat, Tarang Rana, Harris Adedeji will present a demo at the 26' Graphics Interface conference.",
+    text: "Masir, Rachit, Tarang, Harris will present a demo at the 26' Graphics Interface conference.",
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     paper: "/papers/gi26-echolocation-game-demo.pdf",
   },
@@ -37,7 +57,7 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   },
   {
     date: "2026.05",
-    text: "Joel Varghese received Algoma University Research Student Fund with Dr. Nam.",
+    text: "Joel received Algoma University Research Student Fund with Dr. Nam.",
   },
   {
     date: "2026.05",
@@ -51,7 +71,7 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   },
   {
     date: "2026.03",
-    text: "Dr. Nam authored and Joel Varghese co-authored a demo paper in IEEE VR.",
+    text: "Dr. Nam and Joel co-authored a demo paper in IEEE VR.",
     link: "https://ieeexplore.ieee.org/abstract/document/11489900",
   },
   {

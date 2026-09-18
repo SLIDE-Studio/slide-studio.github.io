@@ -45,8 +45,8 @@ export function LatestGroupPhoto() {
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-muted">
         <Image
-          src="/images/album/spring-2026/26SS.jpg"
-          alt="Six SLIDE Studio lab members posing with peace signs outdoors in front of greenery and roses"
+          src="/images/album/fall-2026/IMG_3276.JPG"
+          alt="SLIDE Studio members gathered on outdoor steps beside a brick building, trees, and roses in Fall 2026"
           fill
           sizes="(max-width: 640px) calc(100vw - 2rem), 18rem"
           className="object-cover"

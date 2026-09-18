@@ -29,6 +29,24 @@ export type SeasonAlbum = {
 // Newest seasons at the TOP — they appear first.
 export const albums: SeasonAlbum[] = [
   {
+    id: "fall-2026",
+    season: "Fall",
+    year: 2026,
+    description: "Together for a new fall term in the studio.",
+    photos: [
+      {
+        src: "/images/album/fall-2026/IMG_3276.JPG",
+        alt: "SLIDE Studio members gathered on outdoor steps beside a brick building, trees, and roses in Fall 2026",
+        caption: "Fall term lab group photo",
+      },
+      {
+        src: "/images/album/fall-2026/tmp1.jpg",
+        alt: "Portrait-oriented photo of SLIDE Studio members standing together on steps beneath a tree in Fall 2026",
+        caption: "Fall term lab photo on the steps",
+      },
+    ],
+  },
+  {
     id: "spring-2026",
     season: "Spring",
     year: 2026,
