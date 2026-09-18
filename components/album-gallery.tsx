@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { X, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useRef, useCallback } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
 
 type Photo = {
   src: string
@@ -29,21 +30,7 @@ export function AlbumGallery({
     [photos.length],
   )
 
-  useEffect(() => {
-    if (!isOpen) return
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") close()
-      if (e.key === "ArrowRight") next()
-      if (e.key === "ArrowLeft") prev()
-    }
-    window.addEventListener("keydown", onKey)
-    // Prevent background scroll while the lightbox is open.
-    document.body.style.overflow = "hidden"
-    return () => {
-      window.removeEventListener("keydown", onKey)
-      document.body.style.overflow = ""
-    }
-  }, [isOpen, close, next, prev])
+  const triggerRef = useRef<HTMLButtonElement | null>(null)
 
   const active = openIndex !== null ? photos[openIndex] : null
 
@@ -57,7 +44,10 @@ export function AlbumGallery({
           >
             <button
               type="button"
-              onClick={() => setOpenIndex(i)}
+              onClick={(event) => {
+                triggerRef.current = event.currentTarget
+                setOpenIndex(i)
+              }}
               className="block w-full cursor-zoom-in focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               aria-label={`View larger: ${photo.alt}`}
             >
@@ -78,68 +68,49 @@ export function AlbumGallery({
         ))}
       </div>
 
-      {isOpen && active && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={active.alt}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/80 p-4 backdrop-blur-sm animate-in fade-in duration-200"
-          onClick={close}
-        >
-          <button
-            type="button"
-            onClick={close}
-            aria-label="Close"
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 text-foreground transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+      <Dialog open={isOpen} onOpenChange={(open) => { if (!open) close() }}>
+        {active && (
+          <DialogContent
+            className="flex h-[94dvh] w-[calc(100vw-2rem)] max-w-none flex-col overflow-hidden p-3 pt-12 sm:p-4 sm:pt-12"
+            aria-describedby={undefined}
+            data-lenis-prevent
+            onCloseAutoFocus={(event) => {
+              event.preventDefault()
+              triggerRef.current?.focus({ preventScroll: true })
+            }}
+            onKeyDown={(event) => {
+              if (event.key === "ArrowRight") { event.preventDefault(); next() }
+              if (event.key === "ArrowLeft") { event.preventDefault(); prev() }
+            }}
           >
-            <X className="h-5 w-5" />
-          </button>
-
-          {photos.length > 1 && (
-            <>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  prev()
-                }}
-                aria-label="Previous photo"
-                className="absolute left-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 text-foreground transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:left-6"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  next()
-                }}
-                aria-label="Next photo"
-                className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full bg-background/90 text-foreground transition-colors hover:bg-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:right-6"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </>
-          )}
-
-          <figure
-            className="flex max-h-[90vh] max-w-5xl flex-col items-center"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={active.src || "/placeholder.svg"}
-              alt={active.alt}
-              className="max-h-[80vh] w-auto rounded-lg object-contain shadow-2xl"
-            />
-            {active.caption && (
-              <figcaption className="mt-3 font-mono text-xs text-background/80">
-                {active.caption}
-              </figcaption>
+            <DialogTitle className="sr-only">{active.alt}</DialogTitle>
+            <figure className="flex min-h-0 flex-1 flex-col gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={active.src}
+                alt={active.alt}
+                className="min-h-0 w-full flex-1 object-contain"
+              />
+              {active.caption && (
+                <figcaption className="text-center font-mono text-sm text-muted-foreground">
+                  {active.caption}
+                </figcaption>
+              )}
+            </figure>
+            {photos.length > 1 && (
+              <div className="flex shrink-0 items-center justify-center gap-4">
+                <button type="button" onClick={prev} aria-label="Previous photo" className="flex size-10 items-center justify-center rounded-full border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <ChevronLeft className="size-5" aria-hidden="true" />
+                </button>
+                <span className="text-sm text-muted-foreground" aria-live="polite">{openIndex! + 1} / {photos.length}</span>
+                <button type="button" onClick={next} aria-label="Next photo" className="flex size-10 items-center justify-center rounded-full border border-border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                  <ChevronRight className="size-5" aria-hidden="true" />
+                </button>
+              </div>
             )}
-          </figure>
-        </div>
-      )}
+          </DialogContent>
+        )}
+      </Dialog>
     </>
   )
 }
