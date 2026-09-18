@@ -22,7 +22,7 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   },
   {
     date: "2026.07",
-    text: "Joel, Niya, Muhammad are presenting two posters at the International Conference on Human-Computer Interaction (HCII), Montreal, Canada.",
+    text: "Two short papers (poster) by Joel, Niya, Muhammad were accepted the International Conference on Human-Computer Interaction (HCII), Montreal, Canada.",
     link: "https://2026.hci.international/",
   },
   {
