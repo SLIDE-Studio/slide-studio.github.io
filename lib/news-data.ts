@@ -23,7 +23,7 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   {
     date: "2026.09",
     text: "Dr. Nam officially joined the Cochrane: Priority Setting Methods Group as a Co-Convenor.",
-    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026",
+    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026#anchor-hellos-and-goodbyes-",
   },
   {
     date: "2026.07",
