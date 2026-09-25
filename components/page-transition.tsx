@@ -7,10 +7,10 @@ import type { TransitionScene } from "@/lib/transition-scene"
 
 type Phase = "idle" | "entering" | "waiting" | "leaving"
 
-const ENTER_MS = 450
-const MIN_VISIBLE_MS = 1100
-const LEAVE_MS = 550
-const SAFETY_MS = 6000
+const ENTER_MS = 200
+const MIN_VISIBLE_MS = 450
+const LEAVE_MS = 300
+const SAFETY_MS = 1600
 
 const loadScene = () => import("@/lib/transition-scene")
 
