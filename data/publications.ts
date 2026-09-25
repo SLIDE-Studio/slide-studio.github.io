@@ -42,6 +42,14 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    title: "Kawaii Game Vocalics: How Audio and Visual Stimuli Influence Kawaii, Gender, and Age Perceptions of Game Characters",
+    authors: "Wang, Y., Seaborn, K., Nam, S., Kato, J.",
+    venue: "International Journal of Human–Computer Interaction",
+    year: "2026",
+    link: "https://doi.org/10.1080/10447318.2026.2725398",
+    rank: "Q1 in Web of Science",
+  },
+  {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
     venue: "International Conference on Human-Computer Interaction. Springer Nature Switzerland.",
