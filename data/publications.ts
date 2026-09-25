@@ -93,6 +93,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3772318.3790521",
     rank: "CORE RANK A*",
+    thumbnail: "/images/works/disclosure.png"
   },
   {
     title: "TwinHaus: Digital Twin Design Tool for Sustainable Building Construction",
