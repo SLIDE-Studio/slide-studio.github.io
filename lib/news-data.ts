@@ -21,6 +21,11 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   //   link: "https://www.ieeeismar.net/2026/",
   // },
   {
+    date: "2026.10",
+    text: "Dr. Nam co-authored a paper in the International Journal of Human–Computer Interaction.",
+    link: "https://doi.org/10.1080/10447318.2026.2725398",
+  },
+  {
     date: "2026.09",
     text: "Dr. Nam officially joined the Cochrane: Priority Setting Methods Group as a Co-Convenor.",
     link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026#anchor-hellos-and-goodbyes-",
