@@ -139,14 +139,12 @@ const alumni: Alumnus[] = [
     name: "Harris Adedeji",
     role: "Undergraduate",
     initials: "HA",
-    image: "/images/team/ha.jpeg",
     linkedin: "https://www.linkedin.com/in/harris-adedeji-7270a3204/"
   },
   {
     name: "Masir Javed",
     role: "Undergraduate",
     initials: "MJ",
-    image: "/images/team/mj.jpg",
     linkedin: "https://www.linkedin.com/in/masirjaved/"
   },
   {

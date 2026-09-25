@@ -7,23 +7,28 @@
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   // {
   //   date: "2026.10",
-  //   text: "A full paper by Muhammad & Joel was accepted at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
+  //   text: "A full paper by Muhammad & Joel was published at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
   //   link: "https://ieee-isemv.org/",
   // },
   // {
   //   date: "2026.10",
-  //   text: "A short paper (poster) by Joel, Muhammad, Harris was accepted at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
+  //   text: "A short paper (poster) by Joel, Muhammad, Harris was published at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
   //   link: "https://sui.acm.org/2026/",
   // },
   // {
   //   date: "2026.10",
-  //   text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was accepted at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
+  //   text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was published at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
   //   link: "https://www.ieeeismar.net/2026/",
   // },
   {
+    date: "2026.10",
+    text: "Dr. Nam co-authored a paper in the International Journal of Human–Computer Interaction.",
+    link: "https://doi.org/10.1080/10447318.2026.2725398",
+  },
+  {
     date: "2026.09",
     text: "Dr. Nam officially joined the Cochrane: Priority Setting Methods Group as a Co-Convenor.",
-    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026",
+    link: "https://www.cochrane.org/about-us/news/cochrane-methods-report-2026#anchor-hellos-and-goodbyes-",
   },
   {
     date: "2026.07",
