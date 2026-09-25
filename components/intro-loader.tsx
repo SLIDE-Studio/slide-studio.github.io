@@ -12,17 +12,25 @@ const letters = [
   { char: "E", color: "hsl(350, 60%, 58%)" },
 ]
 
+let introPlayed = false
+
+export function skipIntro() {
+  introPlayed = true
+}
+
 export function IntroLoader({ children }: { children: React.ReactNode }) {
-  const [done, setDone] = useState(false)
+  const [done, setDone] = useState(() => introPlayed)
   const overlayRef = useRef<HTMLDivElement>(null)
   const lettersRef = useRef<(HTMLSpanElement | null)[]>([])
   const wordRef = useRef<HTMLSpanElement>(null)
   const barRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (introPlayed) return
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
     if (prefersReduced) {
+      introPlayed = true
       setDone(true)
       document.body.style.overflow = ""
       return
@@ -32,6 +40,7 @@ export function IntroLoader({ children }: { children: React.ReactNode }) {
 
     const tl = gsap.timeline({
       onComplete: () => {
+        introPlayed = true
         setDone(true)
         document.body.style.overflow = ""
       },

@@ -48,6 +48,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://doi.org/10.1080/10447318.2026.2725398",
     rank: "Q1 in Web of Science",
+    thumbnail: "/images/works/kawaiigestalt.png",
   },
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
@@ -56,6 +57,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://link.springer.com/chapter/10.1007/978-3-032-30826-9_59",
     rank: "Google Scholar HCI Rank 19",
+    thumbnail: "/images/works/HCII_poster.png",
   },
   {
     title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
@@ -64,6 +66,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     rank: "CORE RANK B",
+    thumbnail: "/images/works/echo.png"
   },
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
@@ -72,6 +75,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/abs/10.1145/3796624.3796648",
     rank: "CORE RANK B",
+    thumbnail: "/images/works/makoto.png"
   },
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
@@ -80,6 +84,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3806043",
     rank: "Premier journal in accessible computing",
+    thumbnail: "/images/works/pbp.png"
   },
   {
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences Acceptance of Culturally Sensitive Content",
@@ -88,6 +93,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3772318.3790521",
     rank: "CORE RANK A*",
+    thumbnail: "/images/works/disclosure.png"
   },
   {
     title: "TwinHaus: Digital Twin Design Tool for Sustainable Building Construction",

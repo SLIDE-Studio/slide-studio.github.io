@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Manrope } from 'next/font/google'
 
+import { PageTransition } from '@/components/page-transition'
 import './globals.css'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
@@ -18,7 +19,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${manrope.variable} bg-background`} suppressHydrationWarning>
-      <body className="font-sans antialiased" suppressHydrationWarning>{children}</body>
+      <body className="font-sans antialiased" suppressHydrationWarning>
+        {children}
+        <PageTransition />
+      </body>
     </html>
   )
 }
