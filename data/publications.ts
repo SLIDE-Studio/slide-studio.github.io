@@ -48,7 +48,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://doi.org/10.1080/10447318.2026.2725398",
     rank: "Q1 in Web of Science",
-    thumbnail: "/images/works/kwaiigestalt.png", 
+    thumbnail: "/images/works/kawaiigestalt.png", 
   },
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
@@ -66,7 +66,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://conferences.graphicsinterface.org/2026/posters-and-demonstrations/#demos",
     rank: "CORE RANK B",
-    thumbnail: "https://www.youtube.com/watch?v=ior6fbWrjGE"
+    thumbnail: "/images/works/echo.png"
   },
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
@@ -75,6 +75,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/abs/10.1145/3796624.3796648",
     rank: "CORE RANK B",
+    thumbnail: "/images/works/makoto.png"
   },
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
