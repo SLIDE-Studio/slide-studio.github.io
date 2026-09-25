@@ -48,7 +48,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://doi.org/10.1080/10447318.2026.2725398",
     rank: "Q1 in Web of Science",
-    thumbnail: "/images/works/kawaiigestalt.png", 
+    thumbnail: "/images/works/kawaiigestalt.png",
   },
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
@@ -57,7 +57,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://link.springer.com/chapter/10.1007/978-3-032-30826-9_59",
     rank: "Google Scholar HCI Rank 19",
-    thumbnail: "/images/works/HCII_poster.png", 
+    thumbnail: "/images/works/HCII_poster.png",
   },
   {
     title: "Towards Designing Echolocation Interfaces for Inclusive Virtual Gaming Environments",
@@ -84,6 +84,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://dl.acm.org/doi/10.1145/3806043",
     rank: "Premier journal in accessible computing",
+    thumbnail: "/images/works/pbp.png"
   },
   {
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences Acceptance of Culturally Sensitive Content",
