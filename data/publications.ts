@@ -48,6 +48,7 @@ export const publications: Publication[] = [
     year: "2026",
     link: "https://doi.org/10.1080/10447318.2026.2725398",
     rank: "Q1 in Web of Science",
+    thumbnail: "/images/works/kwaiigestalt.png", 
   },
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
