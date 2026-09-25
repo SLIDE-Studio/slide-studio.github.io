@@ -10,7 +10,7 @@ export default function WorksPage() {
       <SmoothScroll />
       <div className="mx-auto max-w-6xl border-x border-border bg-background">
         <Nav />
-        <main className="pt-8">
+        <main className="px-6 pt-8 lg:px-10">
           <Reveal>
             <Works />
           </Reveal>
