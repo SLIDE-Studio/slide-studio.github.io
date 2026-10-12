@@ -41,11 +41,15 @@ export type Publication = {
  */
 
 export const publications: Publication[] = [
-
-
-
-
-
+  {
+    title: "Single-Arm Locomotion for Multitasking Virtual Reality",
+    authors: "Varghese, J., Minhajuddin, M., Adedeji, H., Torres, T., Lemieux, C., Nam, S.",
+    venue: "ACM Symposium on Spatial User Interaction",
+    year: "2026",
+    link: "https://doi.org/10.1145/3822518.3839298",
+    rank: "",
+    thumbnail: "/images/works/void.png",
+  },
   {
     title: "Developing a Voice-Driven Mixed Reality Visual Analytics System for Immersive Data Exploration",
     authors: "Varghese, J., Rana, T., Minhajuddin, M., Jose, N., Nam, S.",
@@ -53,9 +57,8 @@ export const publications: Publication[] = [
     year: "2026",
     link: "",
     rank: "CORE A*",
-    thumbnail: "/images/works/kawaiigestalt.png",
+    thumbnail: "/images/works/prism.png",
   },
-
   {
     title: "Kawaii Game Vocalics: How Audio and Visual Stimuli Influence Kawaii, Gender, and Age Perceptions of Game Characters",
     authors: "Wang, Y., Seaborn, K., Nam, S., Kato, J.",
