@@ -6,20 +6,25 @@
 //   paper?: optional URL to a paper/PDF — renders as a "Paper" icon link after the text
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   // {
+  //   date: "2026.12",
+  //   text: "Dr.Nam collaborated in six papers and abstracts at the Cochrane Colloquium, Kraków, Poland.",
+  //   link: "",
+  // },
+  // {
   //   date: "2026.10",
   //   text: "A full paper by Muhammad & Joel was published at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
   //   link: "https://ieee-isemv.org/",
   // },
-  // {
-  //   date: "2026.10",
-  //   text: "A short paper (poster) by Joel, Muhammad, Harris was published at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
-  //   link: "https://sui.acm.org/2026/",
-  // },
-  // {
-  //   date: "2026.10",
-  //   text: "A short paper (poster) by Joel, Tarang, Muhammad, Niya was published at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
-  //   link: "https://www.ieeeismar.net/2026/",
-  // },
+  {
+    date: "2026.10",
+    text: "A short paper by Joel, Muhammad, Harris was presented at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
+    link: "https://doi.org/10.1145/3822518.3839298",
+  },
+  {
+    date: "2026.10",
+    text: "A short paper by Joel, Tarang, Muhammad, Niya was presented at the IEEE International Symposium on Mixed and Augmented Reality (ISMAR), Bari, Italy.",
+    link: "https://www.ieeeismar.net/2026/posters/",
+  },
   {
     date: "2026.09",
     text: "Dr. Nam co-authored a paper in the International Journal of Human–Computer Interaction.",
