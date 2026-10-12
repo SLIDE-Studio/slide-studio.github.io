@@ -41,6 +41,21 @@ export type Publication = {
  */
 
 export const publications: Publication[] = [
+
+
+
+
+
+  {
+    title: "Developing a Voice-Driven Mixed Reality Visual Analytics System for Immersive Data Exploration",
+    authors: "Varghese, J., Rana, T., Minhajuddin, M., Jose, N., Nam, S.",
+    venue: "IEEE International Symposium on Mixed and Augmented Reality",
+    year: "2026",
+    link: "",
+    rank: "CORE A*",
+    thumbnail: "/images/works/kawaiigestalt.png",
+  },
+
   {
     title: "Kawaii Game Vocalics: How Audio and Visual Stimuli Influence Kawaii, Gender, and Age Perceptions of Game Characters",
     authors: "Wang, Y., Seaborn, K., Nam, S., Kato, J.",
