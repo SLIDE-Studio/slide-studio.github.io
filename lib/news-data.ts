@@ -10,11 +10,11 @@ export const newsItems: { date: string; text: string; link?: string; paper?: str
   //   text: "Dr.Nam collaborated in six papers and abstracts at the Cochrane Colloquium, Kraków, Poland.",
   //   link: "",
   // },
-  // {
-  //   date: "2026.10",
-  //   text: "A full paper by Muhammad & Joel was published at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
-  //   link: "https://ieee-isemv.org/",
-  // },
+  {
+    date: "2026.10",
+    text: "A full paper by Muhammad & Joel was published at the IEEE International Symposium on Emerging Metaverse (ISEMV), UCLan, Cyprus.",
+    link: "https://ieee-isemv.org/",
+  },
   {
     date: "2026.10",
     text: "A short paper by Joel, Muhammad, Harris was presented at the ACM Symposium on Spatial User Interaction (SUI), Bari, Italy.",
