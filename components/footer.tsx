@@ -6,6 +6,9 @@ export function Footer() {
           <p className="text-foreground">SLIDE Studio</p>
           <p>SociaL Interaction DEsign Research Studio</p>
           <p>&copy; {new Date().getFullYear()} SLIDE Studio</p>
+          <a href="/archive" className="w-fit text-[10px] lowercase tracking-[0.16em] text-muted-foreground/70 transition-colors hover:text-foreground">
+            archive
+          </a>
         </div>
         <p className="text-xs">Built with various AI tools including Opus, Fable, SOL</p>
       </div>
