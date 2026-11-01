@@ -42,6 +42,24 @@ export type Publication = {
 
 export const publications: Publication[] = [
   {
+    title: "Models and components of investigation and bereavement care after sudden and unexpected child death: a scoping review",
+    authors: "Uhm, S., Hunt, K., Nam, S., Jung, H., Garstang, J., Payne, V., Gage, H., Hossain, J., David, W., Darlington, A.S.",
+    venue: "The Cochrane Database of Systematic Reviews",
+    year: "2026",
+    link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC13712251/",
+    rank: "Q1 IF 11.1",
+    thumbnail: "/images/works/cochrane1.png",
+  },
+    {
+    title: "Designing Hyper-Personalized Retail Product Packaging through Generative AI and Augmented Reality",
+    authors: "Minhajuddin, M., Varghese, J., Sathaporn, H., Nam, S.",
+    venue: "IEEE International Symposium on Emerging Metaverse",
+    year: "2026",
+    link: "",
+    rank: "",
+    thumbnail: "/images/hypar2.png",
+  },
+    {
     title: "Single-Arm Locomotion for Multitasking Virtual Reality",
     authors: "Varghese, J., Minhajuddin, M., Adedeji, H., Torres, T., Lemieux, C., Nam, S.",
     venue: "ACM Symposium on Spatial User Interaction",
