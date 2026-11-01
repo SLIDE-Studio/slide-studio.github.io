@@ -1,5 +1,4 @@
 "use client"
-import { useState, useEffect } from "react"
 import { Users, GraduationCap, Linkedin, ExternalLink } from "lucide-react"
 import { motion } from "motion/react"
 import { Stagger, StaggerItem } from "@/components/motion/stagger"
@@ -286,14 +285,6 @@ function AlumnusCard({ alum }: { alum: Alumnus }) {
 }
 
 export function Team() {
-  const [shuffledMembers, setShuffledMembers] = useState(members)
-
-  useEffect(() => {
-    const [first, ...rest] = members
-    const shuffled = [...rest].sort(() => Math.random() - 0.5)
-    setShuffledMembers([first, ...shuffled])
-  }, [])
-
   return (
     <section id="team" className="py-24">
       <div className="mb-16">
@@ -302,7 +293,7 @@ export function Team() {
       </div>
 
       <Stagger className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {shuffledMembers.map((member) => (
+        {members.map((member) => (
           <StaggerItem key={member.name} className="h-full min-h-[180px]">
             <MemberCard member={member} />
           </StaggerItem>
