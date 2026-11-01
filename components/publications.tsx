@@ -1,7 +1,4 @@
-"use client"
-
 import Link from "next/link"
-import { useEffect, useState } from "react"
 import { ArrowUpRight, ArrowRight } from "lucide-react"
 import { publications } from "@/data/publications"
 import { Stagger, StaggerItem } from "@/components/motion/stagger"
@@ -9,14 +6,8 @@ import { Stagger, StaggerItem } from "@/components/motion/stagger"
 const PREVIEW_COUNT = 5
 
 export function Works({ preview = false }: { preview?: boolean }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const visible = mounted ? (preview ? publications.slice(0, PREVIEW_COUNT) : publications) : []
-  const hasMore = mounted && preview && publications.length > PREVIEW_COUNT
+  const visible = preview ? publications.slice(0, PREVIEW_COUNT) : publications
+  const hasMore = preview && publications.length > PREVIEW_COUNT
 
   return (
     <section id="works" className="relative border-t border-border py-20">
