@@ -22,9 +22,9 @@ export function Works({ preview = false }: { preview?: boolean }) {
       </div>
 
       <Stagger className="flex flex-col">
-        {visible.map((pub, idx) => (
+        {visible.map((pub) => (
           <StaggerItem
-            key={idx}
+            key={`${pub.title}-${pub.year}`}
             className="group flex flex-col gap-4 border-t border-border py-7 last:border-b sm:flex-row sm:items-start sm:gap-8"
           >
             <div className="shrink-0 overflow-hidden border border-border bg-muted">
