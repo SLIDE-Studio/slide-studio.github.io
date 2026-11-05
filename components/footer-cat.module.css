@@ -1,0 +1,25 @@
+.track {
+  container-type: inline-size;
+  height: 96px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+.cat {
+  width: 112px;
+  height: 88px;
+  color: var(--foreground);
+  animation: cross 12s linear infinite;
+}
+.body { animation: bob 600ms ease-in-out infinite; }
+.leg { transform-box: fill-box; transform-origin: top center; animation: step 600ms ease-in-out infinite alternate; }
+.opposite { animation-delay: -600ms; }
+.tail { transform-origin: 30px 42px; animation: sway 1200ms ease-in-out infinite alternate; }
+.paused, .paused * { animation-play-state: paused; }
+@keyframes cross { from { transform: translateX(-112px); } to { transform: translateX(100cqw); } }
+@keyframes step { from { transform: rotate(-24deg); } to { transform: rotate(24deg); } }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes sway { from { transform: rotate(-8deg); } to { transform: rotate(8deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .cat { transform: translateX(calc(50cqw - 56px)); }
+  .cat, .cat * { animation: none; }
+}
