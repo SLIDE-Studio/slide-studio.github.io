@@ -7,7 +7,7 @@
 export const newsItems: { date: string; text: string; link?: string; paper?: string }[] = [
   // {
   //   date: "2026.12",
-  //   text: "Dr.Nam collaborated in six papers and abstracts at the Cochrane Colloquium, Kraków, Poland.",
+  //   text: "Dr.Nam presented at the Cochrane Colloquium, Kraków, Poland.",
   //   link: "",
   // },
   {
