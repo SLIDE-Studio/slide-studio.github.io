@@ -1,25 +1,10 @@
-"use client"
-
-import { useEffect, useRef, useState } from "react"
+import { FooterCatTrack } from "./footer-cat-track"
 import styles from "./footer-cat.module.css"
 
 export function FooterCat() {
-  const container = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-
-  useEffect(() => {
-    const element = container.current
-    if (!element) return
-    const observer = new IntersectionObserver(([entry]) => {
-      setVisible(entry.isIntersecting)
-    }, { threshold: 0.75 })
-    observer.observe(element)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div ref={container} className={styles.track}>
-      <svg viewBox="0 0 112 88" role="img" aria-label="A little cat walking from left to right" className={`${styles.cat} ${visible ? "" : styles.paused}`}>
+    <FooterCatTrack>
+      <svg viewBox="0 0 112 88" role="img" aria-label="A little cat walking from left to right" className={styles.cat}>
         <g fill="currentColor" className={styles.body}>
           <g opacity="0.55">
             <rect className={styles.leg} x="34" y="49" width="7" height="26" rx="3.5" />
@@ -39,6 +24,6 @@ export function FooterCat() {
           <path d="M81 45Q83 50 86 45Q89 50 91 45" fill="none" stroke="var(--background)" strokeWidth="2" strokeLinecap="round" />
         </g>
       </svg>
-    </div>
+    </FooterCatTrack>
   )
 }
