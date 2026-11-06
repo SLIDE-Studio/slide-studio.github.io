@@ -2,7 +2,11 @@ import { ArrowDown } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="flex min-h-[72vh] flex-col justify-between border-b border-border py-12 md:py-16 lg:min-h-[78vh]">
+    <section className="relative isolate flex min-h-[72vh] flex-col justify-between overflow-hidden border-b border-border py-12 md:py-16 lg:min-h-[78vh]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[url('/images/studio-room-background.png')] bg-contain bg-bottom bg-no-repeat opacity-[0.12]"
+      />
       <div className="flex items-start justify-between gap-8">
         <p className="text-sm text-muted-foreground">Algoma University · Ontario, Canada</p>
         <p className="hidden max-w-44 text-right text-xs leading-relaxed text-muted-foreground sm:block">Human-computer interaction, accessibility, and social computing.</p>
