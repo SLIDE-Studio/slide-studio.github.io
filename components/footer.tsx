@@ -1,3 +1,5 @@
+import { FooterCat } from "@/components/footer-cat"
+
 export function Footer() {
   return (
     <footer className="border-t border-border px-6 py-10 lg:px-10">
@@ -12,6 +14,7 @@ export function Footer() {
         </div>
         <p className="text-xs">Built with various AI tools including Opus, Fable, SOL</p>
       </div>
+      <FooterCat />
     </footer>
   )
 }
