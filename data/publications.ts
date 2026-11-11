@@ -41,6 +41,7 @@ export type Publication = {
  */
 
 export const publications: Publication[] = [
+  /*
   {
     title: "Models and components of investigation and bereavement care after sudden and unexpected child death: a scoping review",
     authors: "Uhm, S., Hunt, K., Nam, S., Jung, H., Garstang, J., Payne, V., Gage, H., Hossain, J., David, W., Darlington, A.S.",
@@ -50,6 +51,7 @@ export const publications: Publication[] = [
     rank: "Q1 IF 11.1",
     thumbnail: "/images/works/cochrane1.png",
   },
+  */
     {
     title: "Designing Hyper-Personalized Retail Product Packaging through Generative AI and Augmented Reality",
     authors: "Minhajuddin, M., Varghese, J., Sathaporn, H., Nam, S.",
@@ -77,6 +79,7 @@ export const publications: Publication[] = [
     rank: "CORE A*",
     thumbnail: "/images/works/prism.png",
   },
+  /*
   {
     title: "Kawaii Game Vocalics: How Audio and Visual Stimuli Influence Kawaii, Gender, and Age Perceptions of Game Characters",
     authors: "Wang, Y., Seaborn, K., Nam, S., Kato, J.",
@@ -86,6 +89,7 @@ export const publications: Publication[] = [
     rank: "Q1 in Web of Science",
     thumbnail: "/images/works/kawaiigestalt.png",
   },
+  */
   {
     title: "LOCOMO MR: Mixed Reality Agent with Carbon Metrics for Sustainable AI Use",
     authors: "Nam, S., Varghese, J., Jung, H., Uhm, S.",
@@ -104,6 +108,7 @@ export const publications: Publication[] = [
     rank: "CORE RANK B",
     thumbnail: "/images/works/echo.png"
   },
+  /*
   {
     title: "Dreaming with MAKOTO: Co-Designing an Older Adult Voice Assistant Intervention for Implicit Ageism",
     authors: "Seaborn, K., Watanabe, M., Fabre, É., Riesch, P., Nam, S., Mandai, Y., Kojima, M.",
@@ -113,6 +118,7 @@ export const publications: Publication[] = [
     rank: "CORE RANK B",
     thumbnail: "/images/works/makoto.png"
   },
+  */
   {
     title: "Eye Gaze Behaviour and Comprehension of Colour Commentary and Gameplay Captions of Live Fast-Paced Sports for Deaf and Hard of Hearing Television Viewers",
     authors: "Nam, S., Kumarasamy, T., Karam, M., Whitfield, M., Hibbard, E., Leung, J., Fels, D.",
@@ -122,6 +128,7 @@ export const publications: Publication[] = [
     rank: "Premier journal in accessible computing",
     thumbnail: "/images/works/pbp.png"
   },
+  /*
   {
     title: "Disclosure Matters: How Self-Disclosure Statements in Song Signing Videos Shape d/Deaf Audiences Acceptance of Culturally Sensitive Content",
     authors: "Yoo, S., Nam, S., Chignell, M., Truong, K.",
@@ -131,6 +138,7 @@ export const publications: Publication[] = [
     rank: "CORE RANK A*",
     thumbnail: "/images/works/disclosure.png"
   },
+  */
   {
     title: "TwinHaus: Digital Twin Design Tool for Sustainable Building Construction",
     authors: "Nam, S., Varghese, J., Goel, A., Jung, H.",
